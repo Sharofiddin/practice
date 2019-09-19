@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 #include "util.h"
-
+#include "../split.h"
 using std::cout;  	using std::cin;
 using std::string; 	using std::endl;
 using std::vector;
@@ -18,15 +18,15 @@ void print_vec(const vector<string> &vec)
 
 int main()
 {
-	vector<string> str;
-	str.push_back("salom");
-	str.push_back("qalay");
-	str.push_back("do'stim");
-
-	vec_sz size = str.size();
+	vector<string> vec;
+	string str;
+	cout << "Enter words: ";
+	getline(cin, str);
+	vec = split(str);
+	vec_sz size = vec.size();
 	for( vec_sz i = 0; i != size; i++)
 	{
-		print_vec(rotate(str));
+		print_vec(rotate(vec));
 	}
 	return 0;
 }

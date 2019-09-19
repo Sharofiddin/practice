@@ -9,12 +9,15 @@ vector<Pharse> get_pharses( const string &s)
 	vector<string> splitted = split(s);
 	string separator = *(splitted.end());
 	vector<Pharse> pharses;
-	vec_sz size = splitted.size();
-
-	for ( vec_sz = 0; vec_sz < size; size++ ){
+	/*vec_sz size = splitted.size();
+	
+	for ( vec_sz i = 0; i < size; i++ ){
 		Pharse pharse;
 		pharse.separator = separator;
-		pharse.words = rotate(splitted)
+		pharse.words = rotate(splitted);
+	}*/
+
+	return pharses;
 }
 
 vector<string> rotate(vector<string> &vec)
@@ -29,7 +32,7 @@ vector<string> rotate(vector<string> &vec)
 		} else {
 			temp = vec[size - 1];
 			vec[size-1] = vec[i];
-			vec[i] = temp'
+			vec[i] = temp;
 		}
 	}
 

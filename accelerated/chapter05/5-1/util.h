@@ -6,5 +6,5 @@
 #include "Pharse.h"
 
 std::vector<Pharse> get_pharses( const std::string& );
-void rotate(std::vector<std::string>&);
+std::vector<std::string> rotate(std::vector<std::string>&);
 #endif

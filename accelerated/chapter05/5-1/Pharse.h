@@ -1,3 +1,5 @@
+#ifndef GUARD_Pharse
+#define GUARD_Pharse
 #include <iostream>
 #include <vector>
 #include <string>
@@ -8,9 +10,5 @@ struct Pharse
 	std::string separator;
 };
 
-bool compare(Pharse p1, Pharse p2)
-{
-	return p1.words[0] > p2.words[0];
-}
-
-
+bool compare(Pharse p1, Pharse p2);
+#endif

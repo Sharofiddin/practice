@@ -1,6 +1,6 @@
 #include <string>
 #include <vector>
-#include "Pharse"
+#include "Pharse.h"
 using std::vector;	using std::string;
 
 bool compare( const Pharse& p1, const Pharse& p2 )

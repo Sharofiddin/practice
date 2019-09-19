@@ -25,21 +25,12 @@ vector<Pharse> get_pharses( const string &s)
 vector<string> rotate(vector<string> &vec)
 {
 	vec_sz size = vec.size();
-	for( vec_sz i = 0; i < size; i+=2 ){
-		string temp;
-		if(i > 0){
-			cout << i << " " << i - 1 << endl;
-			temp = vec[i];
-			vec[i] = vec[i-1];
-			vec[i-1] = temp;
-		} else {
-			cout << i << " " <<size -1 << endl;
-			temp = vec[size - 1];
-			vec[size-1] = vec[i];
-			vec[i] = temp;
-		}
-	}
+	string last = vec[size - 1];
+	for( vec_sz i = size -1; i > 0; i-- ){
+		vec[i] = vec[i-1];
+	}	
 
+	vec[0] = last;
 	return vec;
 }
 				

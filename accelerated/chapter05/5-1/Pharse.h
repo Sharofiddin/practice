@@ -7,8 +7,12 @@
 struct Pharse
 {
 	std::vector<std::string> words;
-	std::string separator;
+	std::vector<std::string>::size_type separator;
 };
 
-bool compare(Pharse p1, Pharse p2);
+bool compare(const Pharse&, const Pharse& );
+void printPharse(const Pharse&, std::string::size_type );
+std::string low_case(const std::string &);
+std::string join_words(const std::vector<std::string> &);
 #endif
+

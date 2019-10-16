@@ -9,17 +9,18 @@ using std::vector;
 vector<Student_info> extract_fails(vector<Student_info>& students)
 {
 	vector<Student_info>::size_type initial_size = students.size();
-	vector<Student_info>::iterator it = students.begin()+1;
+	vector<Student_info>::iterator it = students.begin();
 	vector<Student_info>::iterator end = students.end();
 	vector<Student_info> fails;
-	cout << initial_size << endl;
-	while (it !=  students.end()) {
+	while (it <  students.end()) {
 		if (!fgrade(*it)) {
 			students.insert(students.begin(),*it);
 			it++;
 	} else {
-		fails.push_back(*it);}
-			it++;}
+		fails.push_back(*it);
+	}
+		it++;
+	}
 	students.resize(initial_size-fails.size());
 	return fails;
 }

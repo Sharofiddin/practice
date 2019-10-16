@@ -3,7 +3,7 @@ CC = g++
 
 CXXFLAGS = -I../chapter04
 
-all:		fails_vec1 fails_vec2 fails_iters fails_list \
+all:		fails_vec1 fails_vec2 fails_iters fails_list fails_vec_5_6\
 		split_main split_main2 pics_main
 
 median.o:	../chapter04/median.cc ../chapter04/median.h
@@ -26,6 +26,8 @@ fails_iters.o:	fails_iters.cc grade.h ../chapter04/Student_info.h
 
 fails_list.o:	fails_list.cc grade.h  ../chapter04/Student_info.h
 
+fails_vec_5_6.o: fails_vec_5_6.cc grade.h ../chapter04/Student_info.h
+
 fails_vec1:	fails_vec1.o ext_main.o grade.o median.o Student_info.o
 
 fails_vec2:	fails_vec2.o ext_main.o grade.o median.o Student_info.o
@@ -33,6 +35,8 @@ fails_vec2:	fails_vec2.o ext_main.o grade.o median.o Student_info.o
 fails_iters:	fails_iters.o ext_main.o grade.o median.o Student_info.o
 
 fails_list:	fails_list.o list_main.o grade.o median.o Student_info.o
+
+fails_vec_5_6:  fails_vec_5_6.o ext_main.o grade.o median.o Student_info.o
 
 pics.o:		pics.cc pics.h
 
@@ -59,7 +63,13 @@ test:		all
 	./split_main2 < split_main2.cc
 	./pics_main
 test_vec2:
-	./fails_vec2 <../data/grades_my
+	time ./fails_vec2 <../data/grades
+test_vec_5_6:
+	time ./fails_vec_5_6 <../data/grades
+test_vec_huge:
+	time ./fails_vec2 <../data/grades_my
+test_5_6_huge:
+	time ./fails_vec_5_6 <../data/grades_my
 clobber:
 	rm -f *.o *.exe core fails_vec1 fails_vec2 fails_iters fails_list \
-	split_main split_main2 pics_main
+	split_main split_main2 pics_main fails_vec_5_6

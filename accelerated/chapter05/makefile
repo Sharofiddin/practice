@@ -52,13 +52,14 @@ split_main2:	split_main2.o split.o
 
 test:		all
 	./fails_vec1 <../data/grades
-	./fails_vec2 <../data/grades
+	./fails_vec2 <../data/grades_my
 	./fails_iters <../data/grades
 	./fails_list <../data/grades
 	./split_main < split_main.cc
 	./split_main2 < split_main2.cc
 	./pics_main
-
+test_vec2:
+	./fails_vec2 <../data/grades_my
 clobber:
 	rm -f *.o *.exe core fails_vec1 fails_vec2 fails_iters fails_list \
 	split_main split_main2 pics_main

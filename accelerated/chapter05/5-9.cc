@@ -9,7 +9,10 @@ using std::sort;
 using std::string;
 using std::vector;
 using std::endl;
-bool compare(const string& s1,const string& s2){ return s1 < s2; }
+bool compare(const string& s1,const string& s2)
+{
+       	return s1 > s2; 
+}
 int main()
 {
 	vector<string> strs;

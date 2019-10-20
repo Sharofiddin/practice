@@ -49,23 +49,6 @@ vector<string> frame(const vector<string>& v)
 	return ret;
 }
 
-vector<string> vcat(const vector<string>& top,
-                    const vector<string>& bottom)
-{
-	// copy the `top' picture
-	vector<string> ret = top;
-
-	// copy entire `bottom' picture
-#ifdef _MSC_VER
-	for (std::vector<string>::const_iterator it = bottom.begin();
-#else
-	for (vector<string>::const_iterator it = bottom.begin();
-#endif
-	     it != bottom.end(); ++it)
-		ret.push_back(*it);
-
-	return ret;
-}
 
 vector<string>
 hcat(const vector<string>& left, const vector<string>& right)

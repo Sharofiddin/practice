@@ -40,11 +40,13 @@ fails_vec_5_6:  fails_vec_5_6.o ext_main.o grade.o median.o Student_info.o
 
 pics.o:		pics.cc pics.h
 
-5_8.o:		5-8.cc pics.h
+5-8.o:		5-8.cc 5-8.h
+
+5-8-main.o: 	5-8-main.cc 5-8.h
 
 pics_main.o:	pics_main.cc pics.h
 
-5_8_main:	pics_main.o 5_8.o
+5_8_main:	5-8-main.o 5-8.o
 
 pics_main:	pics_main.o pics.o
 

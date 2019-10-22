@@ -15,7 +15,7 @@ bool compare(const string& s1,const string& s2)
 }
 int main()
 {
-	vector<string> strs;
+        list<string> strs;
 	string str;
 	while(cin>>str){
 		strs.push_back(str);

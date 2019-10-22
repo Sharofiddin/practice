@@ -1,16 +1,16 @@
 #include <iostream>
-#include <vector>
+#include <list>
 #include <algorithm>
 #include <string>
 
 using std::equal;
 using std::cin;
 using std::cout;
-using std::string;using std::vector;
+using std::string;using std::list;
 using std::endl;
 int main()
 {
-	vector<string> pals;
+	list<string> pals;
 	string text;
 	string::size_type maxlen = 0;
 	while(cin >> text){
@@ -22,8 +22,9 @@ int main()
 				}
 				}
 				}
-				for( vector<string>::const_iterator it= pals.begin(); it != pals.end(); it++){
+				for( list<string>::const_iterator it= pals.begin(); it != pals.end(); it++){
 				cout <<*it << endl;}
+				cout << "longest is: " << *pals.begin()<<endl;
 				return 0;
 				}
 				

@@ -50,6 +50,16 @@ ext_fails1:	ext_main.o ext_fails1.o grade.o median.o Student_info.o
 
 ext_fails2:	ext_main.o ext_fails2.o grade.o median.o Student_info.o
 
+6-1.o:		6-1.h 6-1.cc
+
+6-1_main.o:	6-1_main.cc 6-1.h 
+
+6-1_main:	6-1_main.o 6-1.o
+
+main_urls.o:	main_urls.cc urls.h
+
+main_urls:	main_urls.o urls.o
+
 test:		all
 	./split_main <split.cc
 	./palin <../data/palins_input
@@ -58,6 +68,12 @@ test:		all
 	./ext_fails1 <../data/grades
 	./ext_fails2 <../data/grades
 
+test_6-1:
+	./6-1_main
+
+test_main_urls:
+	./main_urls
 clobber:
 	rm -f *.o *.exe core split_main palin urls_main grade_analysis \
-	ext_fails1 ext_fails2
+	ext_fails1 ext_fails2 6-1_main.o 6-1.o 6-1_main main_urls.o main_urls
+

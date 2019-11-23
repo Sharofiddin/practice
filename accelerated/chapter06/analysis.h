@@ -9,9 +9,13 @@ bool did_all_hw(const Student_info& s);
 double average_analysis(const std::vector<Student_info>& students);
 double median_analysis(const std::vector<Student_info>& students);
 double optimistic_median_analysis(const std::vector<Student_info>& students);
+double  universal_analysis(const std::vector<Student_info>&, double (const std::vector<Student_info>&));
 void write_analysis(std::ostream& out, const std::string& name,
                     double analysis(const std::vector<Student_info>&),
                     const std::vector<Student_info>& did,
                     const std::vector<Student_info>& didnt);
+void universal_write_analysis(
+    std::ostream& , const std::vector<Student_info>&, const std::vector<Student_info>&
+ );
 
 #endif

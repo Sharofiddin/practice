@@ -34,6 +34,16 @@ bool fgrade(const Student_info& s)
 	return grade(s) < 60;
 }
 
+bool fgare(const Student_info& student, double criteria)
+{
+	return grade(student) < criteria;
+}
+
+
+bool pgrade(const Student_info& student, double criteria)
+{
+	return !pgrade(student, criteria);
+}
 bool pgrade(const Student_info& s)
 {
 	return !fgrade(s);

@@ -2,7 +2,9 @@ CXX = g++
 CC = g++
 CXXFLAGS = -I../chapter04 -I../chapter05
 
-all:		split_main palin urls_main grade_analysis ext_fails1 ext_fails2 6-5 test_universal_analysis ext_didnt
+all:		split_main palin urls_main grade_analysis ext_fails1\
+			ext_fails2 6-5 test_universal_analysis ext_didnt\
+			ext_by_creteria
 
 median.o:	../chapter04/median.cc ../chapter04/median.h
 	$(CXX) $(CXXFLAGS) -c ../chapter04/median.cc
@@ -39,7 +41,13 @@ grade_analysis:	grade_analysis.o analysis.o grade_check.o \
 ext_main.o:	../chapter05/ext_main.cc grade.h ../chapter04/Student_info.h \
 		../chapter04/median.h
 	$(CXX) $(CXXFLAGS) -c ../chapter05/ext_main.cc
-
+ext_by_creteria_main.o: ext_by_creteria_main.cc grade.h ../chapter04/Student_info.h \
+		../chapter04/median.h
+	$(CXX) $(CXXFLAGS) -c ext_by_creteria_main.cc
+ext_by_creteria.o: ext_by_creteria.cc grade.h ../chapter04/Student_info.h \
+		../chapter04/median.h
+ext_by_creteria: ext_by_creteria_main.o ext_by_creteria.o grade_check.o grade.o \
+				 median.o Student_info.o
 ext_fails1.o:	ext_fails1.cc grade.h ../chapter04/Student_info.h \
 		../chapter04/median.h
 
@@ -84,6 +92,7 @@ test:		all
 	./6-5 <../data/grades
 	./test_universal_analysis <../data/grades
 	./ext_didnt <../data/grades
+	./ext_by_creteria <../data/grades
 
 test_6-1:
 	./6-1_main
@@ -94,8 +103,10 @@ test_6_5:
 	./6-5 <../data/grades
 test_ext_didnt: ext_didnt
 	./ext_didnt <../data/grades
+test_ext_by_creteria: ext_by_creteria
+	./ext_by_creteria <../data/grades
 clobber:
 	rm -f *.o *.exe core split_main palin urls_main grade_analysis \
 	ext_fails1 ext_fails2 6-1_main main_urls\
-	6-5 ext_didnt
+	6-5 ext_didnt ext_by_creteria
 

@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <algorithm>
 #include "split.h"
 
 using std::cin;            using std::cout;
@@ -33,7 +33,8 @@ map<string, vector<int> >
 		for (vector<string>::const_iterator it = words.begin();
 #endif
 		     it != words.end(); ++it)
-			ret[*it].push_back(line_number);
+			 if(find(ret[*it].begin(),ret[*it].end(),line_number) == ret[*it].end())//7-4
+				ret[*it].push_back(line_number);
 	}
 	return ret;
 }

@@ -12,7 +12,13 @@ int main()
 	double m = 0;
 	double in = 0;
 	double ft = 0.0;
+	
+	vector<double> units;
 	while( cin >> val ){
+		if(val <= 0 ){
+			cout << "Please eneter positive value.\n";
+			continue;
+		}
 		cin >> unit;
 		if( unit == "cm" ){
 			cm = val;
@@ -39,10 +45,18 @@ int main()
 			 continue; 
 		}
 
+		units.push_back(m);
 		cout <<"Entered: "<< val << " " << unit << endl;
 		cout <<"Convertation results: " << cm << " cm, " << m << " m, " << ft << " ft, " << in << " in.\n";
 	}
-
+	sort(units.begin(), units.end());
+	cout <<"All enetered units(sorted):\n";
+	for(vector<double>::const_iterator it= units.begin(); it != units.end(); it++){
+		cout << *it <<"m\n";
+	}
+	cout <<"Max enetered: " << *(units.end()-1) << "m" << endl;
+	cout <<"Min enetered: " << *(units.begin()) << "m" << endl;
+	cout <<"Sum: " << accumulate(units.begin(), units.end(), 0) << "m" << endl;
 	return 0;
 }
        				

@@ -27,10 +27,6 @@ split.o:	../chapter06/split.cc ../chapter05/split.h
 
 grammar:	grammar.o split.o
 
-
-
-
-
 test:		all
 	./wc < wc.cc
 	./xref < wc.cc

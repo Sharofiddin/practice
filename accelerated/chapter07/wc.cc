@@ -1,50 +1,38 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <sstream>
 #include <algorithm>
 #include <vector>
+#include <iterator>
 
-using std::vector;
-using std::cin;
-using std::cout;
-using std::endl;
+using std::stringstream;
 using std::map;
 using std::string;
-using std::sort;
-using std::pair;
-
+using std::cin;
+using std::cout;
+using std::istringstream;
+using std::istream_iterator;
+using std::back_inserter;
+using std::copy;
+using std::vector;
 int main()
 {
-	string s;
-	map<string, int> counters; // store each word and an associated counter
-	map<int, vector<string>> wordsByFreq;
-
-	// read the input, keeping track of each word and how often we see it
-	while (cin >> s)
-		++counters[s];
-	// write the words and associated counts
-#ifdef _MSC_VER
-	for (std::map<string, int>::const_iterator it = counters.begin();
-#else
-	for (map<string, int>::const_iterator it = counters.begin();
-#endif
-	     it != counters.end(); ++it) {
-		cout << it->first << "\t" << it->second << endl;
+	map<string, int> words_table;
+	vector<string> words;
+	string line;
+	while( getline(cin, line) ){
+		istringstream iss(line);
+  		copy(istream_iterator<string>(iss), 
+                	istream_iterator<string>(),
+                	back_inserter(words));
 	}
-
-	for (map<string, int>::const_iterator it = counters.begin(); it != counters.end(); it++)
-	{
-		wordsByFreq[it->second].push_back(it->first);
-	}
-
-	for(map<int,vector<string>>::const_iterator it = wordsByFreq.begin(); it != wordsByFreq.end(); it++){
-		cout << "freq " << it->first <<":\n";
-		for(vector<string>::const_iterator iter = it->second.begin(); iter != it->second.end(); iter++){
-			cout << *iter <<" ";
+	for( auto it = words.begin(); it != words.end(); it++ ){
+			words_table[*it]++;
 		}
-		cout << endl;
+	for( auto it = words_table.begin(); it != words_table.end(); it++ ){
+		cout << it->first <<" "<<it->second <<"\n";
 	}
-	
 	return 0;
-}
 
+}

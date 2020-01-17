@@ -10,6 +10,8 @@ using std::endl;           using std::getline;
 using std::istream;        using std::string;
 using std::vector;         using std::map;
 
+
+const int string_break_lim = 5;
 // find all the lines that refer to each word in the input
 map<string, vector<int> >
 	xref(istream& in,
@@ -51,8 +53,12 @@ int main()
 	for (map<string, vector<int> >::const_iterator it = ret.begin();
 #endif
 	     it != ret.end(); ++it) {
+		cout << it->first;
 		// write the word
-		cout << it->first << " occurs on line(s): ";
+		if(it->first.size() > string_break_lim){
+			cout <<"\n\t";
+		}
+		cout<< " occurs on line(s): ";
 
 		// followed by one or more line numbers
 #ifdef _MSC_VER
@@ -63,9 +69,17 @@ int main()
 		cout << *line_it;	// write the first line number
 
 		++line_it;
+		int occ_count = 1;
 		// write the rest of the line numbers, if any
 		while (line_it != it->second.end()) {
-			cout << ", " << *line_it;
+			occ_count++;
+			if( occ_count > string_break_lim ){
+				cout << endl;
+				cout << *line_it;
+				occ_count = 1;	
+			 } else {
+				cout << ", " << *line_it;
+			 }
 			++line_it;
 		}
 		// write a new line to separate each word from the next

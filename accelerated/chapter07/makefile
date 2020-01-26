@@ -27,12 +27,17 @@ split.o:	../chapter06/split.cc ../chapter05/split.h
 
 grammar:	grammar.o split.o
 
+grammar_list: grammar_list.o split.o
+
 test:		all
 	./wc < wc.cc
 	./xref < wc.cc
 	./grammar <../data/grammar_input
 test_student_info_map_to_letter: student_info_map_to_letter
 	./student_info_map_to_letter<../data/grades 
+test_grammar_list: grammar_list
+		./grammar_list <../data/grammar_input
 clobber:
 	rm -f *.o *.exe core wc xref grammar\
-		test_student_info_map_to_letter
+		test_student_info_map_to_letter\
+		grammar_list

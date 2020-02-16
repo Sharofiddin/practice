@@ -26,7 +26,8 @@ split.o:	../chapter06/split.cc ../chapter05/split.h
 	$(CXX) $(CXXFLAGS) -c ../chapter06/split.cc
 
 grammar:	grammar.o split.o
-
+grammar_d: 
+	$(CXX) -g grammar.cc grammar.o split.o
 grammar_list: grammar_list.o split.o
 
 test:		all

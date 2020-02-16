@@ -33,7 +33,7 @@ Grammar read_grammar(istream& in)
 
 	// read the input
 	while (getline(in, line)) {
-
+		cout << "Read line " << line << "\n";
 		// `split' the input into words
 		vector<string> entry = split(line);
 
@@ -48,11 +48,45 @@ Grammar read_grammar(istream& in)
 void gen_aux(const Grammar&, const string&, vector<string>&);
 
 int nrand(int);
-
+bool bracketed(const string& );
 vector<string> gen_sentence(const Grammar& g)
 {
+	cout << "Generting sentence ...\n";
 	vector<string> ret;
-	gen_aux(g, "<sentence>", ret);
+	Grammar::const_iterator rules_it = g.find("<sentence>");
+	Rule_collection rules = rules_it->second;
+	if( rules_it != g.end()){
+		cout << "Sentence rule is found\n";
+	}	else {
+		cout << "Sentence rule is not found\n";
+	}
+	for (int i = 0;  i < rules.size(); i++)
+	{
+		cout << "Analyzing rule " << *rules[i].begin()<<"\n";
+		Rule rule = rules[i];
+		for(Rule::iterator words_it = rule.begin(); words_it != rule.end(); ++words_it){
+			cout <<"Analyzing word " << *words_it <<"\n";
+			if(!bracketed(*words_it)){
+				cout << *words_it << " is word\n";
+				ret.push_back(*words_it);
+			} else {
+				cout << *words_it << " is rule\n";
+				Grammar::const_iterator test_it = g.find(*words_it);
+				if (test_it == g.end())
+					throw logic_error("empty rule");
+				// fetch the set of possible rules
+				const Rule_collection& c = test_it->second;
+
+				// from which we select one at random
+				const Rule& r = c[nrand(c.size())];
+
+				rules.push_back(r);
+				cout << "Rule added to collection\n";
+			}
+		}
+	}
+
+	
 	return ret;
 }
 
@@ -61,13 +95,14 @@ bool bracketed(const string& s)
 	return s.size() > 1 && s[0] == '<' && s[s.size() - 1] == '>';
 }
 
-void
-gen_aux(const Grammar& g, const string& word, vector<string>& ret)
+void gen_aux(const Grammar& g, const string& word, vector<string>& ret)
 {
 
 	if (!bracketed(word)) {
+		cout << word << " is word\n";
 		ret.push_back(word);
 	} else {
+		cout << word << " is rule!\n";
 		// locate the rule that corresponds to `word'
 		Grammar::const_iterator it = g.find(word);
 		if (it == g.end())

@@ -53,40 +53,21 @@ vector<string> gen_sentence(const Grammar& g)
 {
 	cout << "Generting sentence ...\n";
 	vector<string> ret;
-	Grammar::const_iterator rules_it = g.find("<sentence>");
-	Rule_collection rules = rules_it->second;
-	if( rules_it != g.end()){
-		cout << "Sentence rule is found\n";
-	}	else {
-		cout << "Sentence rule is not found\n";
-	}
-	for (int i = 0;  i < rules.size(); i++)
-	{
-		cout << "Analyzing rule " << *rules[i].begin()<<"\n";
-		Rule rule = rules[i];
-		for(Rule::iterator words_it = rule.begin(); words_it != rule.end(); ++words_it){
-			cout <<"Analyzing word " << *words_it <<"\n";
-			if(!bracketed(*words_it)){
-				cout << *words_it << " is word\n";
-				ret.push_back(*words_it);
-			} else {
-				cout << *words_it << " is rule\n";
-				Grammar::const_iterator test_it = g.find(*words_it);
-				if (test_it == g.end())
-					throw logic_error("empty rule");
-				// fetch the set of possible rules
-				const Rule_collection& c = test_it->second;
-
-				// from which we select one at random
-				const Rule& r = c[nrand(c.size())];
-
-				rules.push_back(r);
-				cout << "Rule added to collection\n";
-			}
-		}
-	}
-
-	
+	vector<string> tokens;
+	tokens.push_back("<sentence>");
+	while(!tokens.empty()){
+		string token = tokens.back();
+		tokens.pop_back();
+		if(!bracketed(token)){
+			ret.push_back(token);
+		} else {
+			Grammar::const_iterator it = g.find(token);
+			if( it == g.end())
+		           throw logic_error("empty rule");			   const Rule_collection c  = it->second;
+			const Rule r = c[nrand(c.size())];
+			for(Rule::const_reverse_iterator it= r.rbegin();it!=r.rend();it++)
+				tokens.push_back(*it);
+	}}
 	return ret;
 }
 

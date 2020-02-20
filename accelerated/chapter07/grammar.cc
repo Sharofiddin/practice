@@ -64,7 +64,9 @@ vector<string> gen_sentence(const Grammar& g)
 			Grammar::const_iterator it = g.find(token);
 			if( it == g.end())
 		           throw logic_error("empty rule");			   const Rule_collection c  = it->second;
-			const Rule r = c[nrand(c.size())];
+			Rule::size_type n = nrand(c.size());
+			std::clog << c.size()<< '\t'<< n << '\n';
+			const Rule r = c[n];
 			for(Rule::const_reverse_iterator it= r.rbegin();it!=r.rend();it++)
 				tokens.push_back(*it);
 	}}
@@ -103,6 +105,7 @@ void gen_aux(const Grammar& g, const string& word, vector<string>& ret)
 
 int main()
 {
+	srand(time(NULL));
 	// generate the sentence
 	vector<string> sentence = gen_sentence(read_grammar(cin));
 

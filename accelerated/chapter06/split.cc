@@ -2,12 +2,15 @@
 #include <cctype>
 #include <string>
 #include <vector>
-
+#include <list>
 #include "split.h"
+#include <iostream>
 
+using std::cout;
 using std::find_if;
 using std::string;
 using std::vector;
+using std::list;
 
 #ifndef _MSC_VER
 using std::isspace;
@@ -47,3 +50,26 @@ vector<string> split(const string& str)
 	return ret;
 }
 
+list<string> split_to_list( const string &line)
+{
+cout << "splitting line to list ...\n";
+typedef string::const_iterator iter;
+	list<string> ret;
+
+	iter i = line.begin();
+	while (i != line.end()) {
+
+		// ignore leading blanks
+		i = find_if(i, line.end(), not_space);
+
+		// find end of next word
+		iter j = find_if(i, line.end(), space);
+
+		// copy the characters in `[i,' `j)'
+		if (i != line.end())
+			ret.push_back(string(i, j));
+		i = j;	
+}
+cout << "line is splitted,\n list size " << ret.size() << '\n';
+return ret;
+}

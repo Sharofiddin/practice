@@ -84,3 +84,26 @@ double optimistic_median_analysis(const vector<Student_info>& students)
         return median(grades);
 }
 
+double  universal_analysis(const vector<Student_info>& students, double method(const Student_info&))
+{
+    vector<double> grades;
+
+	transform(students.begin(), students.end(),
+	          back_inserter(grades), method);
+	return median(grades);
+}
+
+void universal_write_analysis(
+    ostream& out, 
+    const vector<Student_info>& did, const vector<Student_info>& didnt
+ ){
+     out << "avarage" << " median(did) = " << universal_analysis(did, average_grade) 
+                << ", median(didnt)" << universal_analysis(didnt,average_grade) 
+                << endl;
+	out << "median" << " median(did) = " << universal_analysis(did, grade_aux) 
+                << ", median(didnt)" << universal_analysis(didnt, grade_aux) 
+                << endl;
+	out << "optimistic median" << " median(did) = " << universal_analysis(did, optimistic_median) 
+                << ", median(didnt)" << universal_analysis(didnt,optimistic_median) 
+                << endl;
+ }

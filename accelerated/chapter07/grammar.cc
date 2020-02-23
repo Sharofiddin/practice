@@ -53,6 +53,7 @@ vector<string> gen_sentence(const Grammar& g)
 {
 	cout << "Generting sentence ...\n";
 	vector<string> ret;
+<<<<<<< HEAD
 	Grammar::const_iterator rules_it = g.find("<sentence>");
 	Rule_collection rules = rules_it->second;
 	if( rules_it != g.end()){
@@ -90,6 +91,25 @@ vector<string> gen_sentence(const Grammar& g)
 	}
 
 	
+=======
+	vector<string> tokens;
+	tokens.push_back("<sentence>");
+	while(!tokens.empty()){
+		string token = tokens.back();
+		tokens.pop_back();
+		if(!bracketed(token)){
+			ret.push_back(token);
+		} else {
+			Grammar::const_iterator it = g.find(token);
+			if( it == g.end())
+		           throw logic_error("empty rule");			   const Rule_collection c  = it->second;
+			Rule::size_type n = nrand(c.size());
+			std::clog << c.size()<< '\t'<< n << '\n';
+			const Rule r = c[n];
+			for(Rule::const_reverse_iterator it= r.rbegin();it!=r.rend();it++)
+				tokens.push_back(*it);
+	}}
+>>>>>>> 76dd56bde449b8728f2730f62299d9f38ff85490
 	return ret;
 }
 
@@ -125,6 +145,7 @@ void gen_aux(const Grammar& g, const string& word, vector<string>& ret)
 
 int main()
 {
+	srand(time(NULL));
 	// generate the sentence
 	vector<string> sentence = gen_sentence(read_grammar(cin));
 

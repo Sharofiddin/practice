@@ -70,18 +70,21 @@ vector<string> gen_sentence(const Grammar& g)
 				cout << *words_it << " is word\n";
 				ret.push_back(*words_it);
 			} else {
-				cout << *words_it << " is rule\n";
-				Grammar::const_iterator test_it = g.find(*words_it);
-				if (test_it == g.end())
-					throw logic_error("empty rule");
-				// fetch the set of possible rules
-				const Rule_collection& c = test_it->second;
+				bool isRuleExist = true;
+				while(isRuleExist){
+					cout << *words_it << " is rule\n";
+					Grammar::const_iterator test_it = g.find(*words_it);
+					if (test_it == g.end())
+						throw logic_error("empty rule");
+					// fetch the set of possible rules
+					const Rule_collection& c = test_it->second;
 
-				// from which we select one at random
-				const Rule& r = c[nrand(c.size())];
+					// from which we select one at random
+					const Rule& r = c[nrand(c.size())];
 
-				rules.push_back(r);
-				cout << "Rule added to collection\n";
+					rules.push_back(r);
+					cout << "Rule added to collection\n";
+				}
 			}
 		}
 	}

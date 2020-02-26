@@ -14,9 +14,9 @@ wc.o:		wc.cc
 
 wc:		wc.o
 
-xref.o:		xref.cc ../chapter05/split.h
+xref.o:		xref.cc ../chapter06/urls.h
 
-xref:		xref.o split.o
+xref:		xref.o urls.o
 
 grammar.o:	grammar.cc ../chapter05/split.h
 
@@ -24,6 +24,8 @@ student_info_map_to_letter.o: student_info_map_to_letter.cc
 student_info_map_to_letter: student_info_map_to_letter.o median.o grade.o Student_info.o
 split.o:	../chapter06/split.cc ../chapter05/split.h
 	$(CXX) $(CXXFLAGS) -c ../chapter06/split.cc
+urls.o:	../chapter06/urls.cc ../chapter06/urls.h
+	$(CXX) $(CXXFLAGS) -c ../chapter06/urls.cc
 
 grammar:	grammar.o split.o
 grammar_d: grammar.o split.o -g

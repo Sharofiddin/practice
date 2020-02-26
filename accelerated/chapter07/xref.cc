@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include "split.h"
+#include "urls.h"
 
 using std::cin;            using std::cout;
 using std::endl;           using std::getline;
@@ -15,7 +15,7 @@ const int string_break_lim = 5;
 // find all the lines that refer to each word in the input
 map<string, vector<int> >
 	xref(istream& in,
-	     vector<string> find_words(const string&) = split)
+	     vector<string> find_words(const string&) = find_urls)
 {
 	string line;
 	int line_number = 0;
@@ -55,10 +55,8 @@ int main()
 	     it != ret.end(); ++it) {
 		cout << it->first;
 		// write the word
-		if(it->first.size() > string_break_lim){
-			cout <<"\n\t";
-		}
-		cout<< " occurs on line(s): ";
+		cout	<< " occurs on " 
+				<< ((it->second.size() == 1 ) ? "line: " : "line(s): ") << endl;
 
 		// followed by one or more line numbers
 #ifdef _MSC_VER

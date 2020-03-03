@@ -1,6 +1,6 @@
 CXX = g++
 CC = g++
-CXXFLAGS = -I. -I../chapter04
+CXXFLAGS = -I. -I../chapter04 -I ../chapter06
 
 all:		split_main main3 analysis
 
@@ -13,6 +13,9 @@ split_main:	split_main.o
 
 analysis.o:	../chapter06/analysis.cc ../chapter06/analysis.h
 	$(CXX) $(CXXFLAGS) -c ../chapter06/analysis.cc
+8-2.o: 8-2.cc
+
+8-2: grade.o Student_info.o analysis.o grade_check.o 8-2.o
 
 grade.o:	../chapter06/grade.cc ../chapter06/grade.h
 	$(CXX) $(CXXFLAGS) -c ../chapter06/grade.cc
@@ -35,6 +38,6 @@ test:		all
 	./main3 < ../data/single_grade
 	./main3 < ../data/grades
 	./analysis < ../data/grades
-
+	./8-2 < ../data/grades
 clobber:
 	rm -f *.o *.exe core split_main main3 analysis

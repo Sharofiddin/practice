@@ -15,7 +15,7 @@ analysis.o:	../chapter06/analysis.cc ../chapter06/analysis.h
 	$(CXX) $(CXXFLAGS) -c ../chapter06/analysis.cc
 8-1.o: 8-1.cc
 
-8-1: grade.o Student_info.o analysis.o grade_check.o 8-2.o
+8-1: grade.o Student_info.o analysis.o grade_check.o
 
 8-2_test: 8-2_test.cc 8-2.h
 

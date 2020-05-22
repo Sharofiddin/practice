@@ -74,6 +74,19 @@ bool test_copy()
     return tar == src;
 }
 
+bool pred( string::iterator it ){
+    return *it == 's';
+}
+void test_remove_copy_if()
+{
+    cout << "testing remove copy if\n";
+    string s1 = "sariq";
+    string s2;
+    s2.resize(s1.size());
+    remove_copy_if(s1.begin(), s1.end(), s2.begin(), pred);
+    cout << "s2 " << s2;
+
+}
 int main(int argc, char const *argv[])
 {
     if (!test_equal())
@@ -106,6 +119,7 @@ int main(int argc, char const *argv[])
         cout << "copy( b , e, d ) function test is passed\n";
     }
     
+    test_remove_copy_if();
 
     return 0;
 }

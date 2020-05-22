@@ -34,4 +34,19 @@ void copy(It begin, It end, It target){
         begin++;
     }
 }
+
+template <class It, class Pr>
+void remove_copy_if( It b, It e, It d, Pr p)
+{
+    while (b != e )
+    {
+        if(!p(b)){
+            *d = *b;
+            d++;
+        }
+        b++;
+
+    }
+    
+}
 #endif

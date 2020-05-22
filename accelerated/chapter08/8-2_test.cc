@@ -74,8 +74,12 @@ bool test_copy()
     return tar == src;
 }
 
-bool pred( string::iterator it ){
-    return *it == 's';
+bool pred( char c ){
+    return c == 's';
+}
+
+char func( char c ){
+    return ++c;
 }
 void test_remove_copy_if()
 {
@@ -84,8 +88,36 @@ void test_remove_copy_if()
     string s2;
     s2.resize(s1.size());
     remove_copy_if(s1.begin(), s1.end(), s2.begin(), pred);
-    cout << "s2 " << s2;
+    cout << "s2 " << s2 << "\n";
+    cout << "end.\n";
 
+}
+
+void test_transform()
+{
+    cout << "test transform\n";
+    string s1 = "abc";
+    string s2;
+    s2.resize(s1.size());
+    transform(s1.begin(), s1.end(), s2.begin(), func);
+    cout << "s2 " << s2 << "\n";
+    cout << "end\n";
+}
+
+void test_accumulate()
+{
+    cout << "test accumulate ...\n";
+    vector<int> vec;
+    vec.push_back(10);
+    vec.push_back(100);
+    vec.push_back(1000);
+    int res  = accumulate(vec.begin(), vec.end(), 0);
+    if( res == 1110 ){
+        cout << "passed\n";
+    } else {
+        cout <<"not passed\n";
+    }
+    cout << "end\n";
 }
 int main(int argc, char const *argv[])
 {
@@ -120,6 +152,8 @@ int main(int argc, char const *argv[])
     }
     
     test_remove_copy_if();
+    test_transform();
+    test_accumulate();
 
     return 0;
 }

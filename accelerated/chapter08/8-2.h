@@ -40,7 +40,7 @@ void remove_copy_if( It b, It e, It d, Pr p)
 {
     while (b != e )
     {
-        if(!p(b)){
+        if(!p(*b)){
             *d = *b;
             d++;
         }
@@ -48,5 +48,25 @@ void remove_copy_if( It b, It e, It d, Pr p)
 
     }
     
+}
+
+template <class It, class Func>
+void transform( It b, It e, It d, Func f){
+
+    while( b!= e ){
+        *d = f(*b);
+        b++;
+        d++;
+    }
+}
+
+template <class It, class Target>
+Target accumulate(It b, It e, Target t){
+    while (b != e)
+    {
+        t += *b;
+        b++;
+    }
+    return t;
 }
 #endif

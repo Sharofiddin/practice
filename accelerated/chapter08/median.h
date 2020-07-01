@@ -27,5 +27,15 @@ T median(vector<T> v)
 
 	return size % 2 == 0 ? (v[mid] + v[mid-1]) / 2 : v[mid];
 }
+
+template <class It, class S>
+typename It::value_type median(It b, It e, S size)
+{
+	if( size == 0 )
+		throw domain_error("empty vector");
+	sort(b,e);
+	S mid = size / 2;
+	return size % 2 == 0 ? ((*(b + mid) + *(b + mid  - 1 )) / 2) : *(b + mid);
+}
 #endif
 

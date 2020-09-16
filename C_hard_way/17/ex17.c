@@ -91,9 +91,14 @@ void Database_write(struct Connection *conn)
 {
 	rewind(conn->file);
 
-	int rc = fwrite(conn->db, sizeof(struct Database),1,conn->file);
+	int rc = fwrite(conn->db->max_rows, sizeof(unsigned long),1,conn->file);
 	if(rc != 1)
-		die(conn,"Failed to write database.");
+		die(conn,"Failed to write database. max_rows");
+	rc = fwrite(conn->db->max_data, sizeof(unsigned long),1,conn->file);
+	if(rc != 1)
+		die(conn, "Failed to write database. max_data");
+	size_t i = 0;
+	for( i = 0; i < conn->db->max_rows; i++)
 	rc = fflush(conn->file);
 	if( rc == -1)
 		die(conn,"Cannot flush database");
@@ -103,11 +108,17 @@ void Database_create(struct Connection *conn)
 {
 	int i = 0;
 	conn->db->rows = malloc(sizeof(struct Address)*conn->db->max_rows);
-	if( conn->db->rows == NULL)
+	if(conn->db->rows == NULL)
 		die(conn,"ERROR: Memory error");
 	for(i = 0; i < conn->db->max_rows; i++){
-		struct Address addr = {.id = i, .set = 0};
-		conn->db->rows[i] = addr;
+		conn->db->rows[i].id = i;
+		conn->db->rows[i].set = 0;
+		conn->db->rows[i].name = malloc(conn->db->max_data);
+		if(conn->db->rows[i].name == NULL)
+			die(conn, "ERROR: Memory error");
+		conn->db->rows[i].email = malloc(conn->db->max_data);
+		if(conn->db->rows[i].email == NULL)
+			die(conn, "ERROR: Memory error");
 	}
 }
 
@@ -200,8 +211,3 @@ int main(int argc, char *argv[])
 
 	return 0;
 }
-
-
-
-
-	

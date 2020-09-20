@@ -27,8 +27,21 @@ void Database_close( struct Connection *conn){
 	if(conn){
 		if(conn->file)
 			fclose(conn->file);
-		if(conn->db)
+		if(conn->db){
+			if(conn->db->rows){
+				for(size_t i = 0; i < conn->db->max_rows; i++){
+					if(conn->db->rows[i]){
+						if(conn->db->rows[i]->name)
+							free(conn->db->rows[i]->name);
+						if(conn->db->rows[i]->email)
+							free(conn->db->rows[i]->email);
+						free(conn->db->rows[i]);
+					}
+				}
+				free(conn->db->rows);
+			}
 			free(conn->db);
+		}
 		free(conn);
 	}
 }
@@ -128,10 +141,10 @@ void Database_write(struct Connection *conn)
 		rc = fwrite(&row->set, sizeof(row->set),1, conn->file);
 		if(rc != 1)
 			die(conn,"Failed to write file Address(id)");
-		rc = fwrite(&row->name, conn->db->max_data,1, conn->file);
+		rc = fwrite(row->name, conn->db->max_data,1, conn->file);
 		if(rc != 1)
 			die(conn,"Failed to write file Address(name)");
-		rc = fwrite(&row->email, conn->db->max_data,1, conn->file);
+		rc = fwrite(row->email, conn->db->max_data,1, conn->file);
 		if(rc != 1)
 			die(conn,"Failed to write file Address(email)");
 	}

@@ -1,7 +1,8 @@
 // This file contains sample implementations of assorted algorithms
 // from the standard library.  It is not actually used by any of the
 // other code in the book.
-
+#include <algorithm>
+#include <iostream>
 template <class In, class X> In find(In begin, In end, const X& x)
 {
 	while (begin != end && *begin != x)
@@ -27,12 +28,28 @@ void replace(For beg, For end, const X& x, const X& y)
 	}
 }
 
-template <class Bi> void reverse(Bi begin, Bi end)
+template <class Bi> void reverse_v(Bi begin, Bi end)
 {
 	while (begin != end) {
 		--end;
 		if (begin != end)
-			swap(*begin++, *end);
+			std::swap(*begin++, *end);
+	}
+}
+
+//does not work 
+template <class Bi> void reverse_without_swap(Bi begin, Bi end)
+{
+	while (begin != end) {
+		--end;
+		if (begin != end){
+			std::cout << "1. " << &(*begin) <<" " << &(*end) <<"\n";
+			Bi temp = begin;
+			begin = end;
+			end = temp;
+			begin++;
+			std::cout <<"2. "<< &(*begin) <<" " << &(*end) <<"\n";
+		}
 	}
 }
 

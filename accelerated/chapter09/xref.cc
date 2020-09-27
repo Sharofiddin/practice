@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include "urls.h"
+#include "../chapter06/urls.h"
 
 using std::cin;            using std::cout;
 using std::endl;           using std::getline;
@@ -13,13 +13,13 @@ using std::vector;         using std::map;
 
 const int string_break_lim = 5;
 // find all the lines that refer to each word in the input
-map<string, vector<int> >
+map<string, vector<int>::iterator >
 	xref(istream& in,
 	     vector<string> find_words(const string&) = find_urls)
 {
 	string line;
 	int line_number = 0;
-	map<string, vector<int> > ret;
+	map<string, vector<int>::iterator > ret;
 
 	// read the next line
 	while (getline(in, line)) {
@@ -40,36 +40,6 @@ map<string, vector<int> >
 	}
 	return ret;
 }
-
-template <class T>
-map<string, vector<int> >
-	xref(istream& in,
-	     vector<string> find_words(const string&) = find_urls,)
-{
-	string line;
-	int line_number = 0;
-	map<string, vector<int> > ret;
-
-	// read the next line
-	while (getline(in, line)) {
-		++line_number;
-
-		// break the input line into words
-		vector<string> words = find_words(line);
-
-		// remember that each word occurs on the current line
-#ifdef _MSC_VER
-		for (std::vector<string>::const_iterator it = words.begin();
-#else
-		for (vector<string>::const_iterator it = words.begin();
-#endif
-		     it != words.end(); ++it)
-			 if(find(ret[*it].begin(),ret[*it].end(),line_number) == ret[*it].end())//7-4
-				ret[*it].push_back(line_number);
-	}
-	return ret;
-}
-
 
 int main()
 {

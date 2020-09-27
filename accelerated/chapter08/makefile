@@ -18,7 +18,8 @@ analysis.o:	../chapter06/analysis.cc ../chapter06/analysis.h
 8-1: grade.o Student_info.o analysis.o grade_check.o
 
 8-2_test: 8-2_test.cc 8-2.h
-
+8-3: 
+	$(CXX) test_median_it.cc -o 8-3
 grade.o:	../chapter06/grade.cc ../chapter06/grade.h
 	$(CXX) $(CXXFLAGS) -c ../chapter06/grade.cc
 
@@ -43,5 +44,6 @@ test:		all
 	./analysis < ../data/grades
 	./8-1 < ../data/grades
 	./8-2
+	./8-3
 clobber:
 	rm -f *.o *.exe core split_main main3 analysis 8-2_test

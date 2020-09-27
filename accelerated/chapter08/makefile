@@ -36,7 +36,7 @@ grade_analysis.o: ../chapter06/grade_analysis.cc ../chapter06/analysis.h
 
 grade_check.o:	../chapter06/grade_check.cc
 	$(CXX) $(CXXFLAGS) -c ../chapter06/grade_check.cc
-
+stl_algs_test: stl_algs.h
 test:		all
 	./split_main <split_main.cc
 	./main3 < ../data/single_grade
@@ -46,4 +46,4 @@ test:		all
 	./8-2
 	./8-3
 clobber:
-	rm -f *.o *.exe core split_main main3 analysis 8-2_test
+	rm -f *.o *.exe core split_main main3 analysis 8-2_test stl_algs_test

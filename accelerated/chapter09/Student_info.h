@@ -17,8 +17,10 @@ public:
 	double grade() const;    // as defined in 9.2.1/158
 private:
 	std::string n;
-	double midterm, final;
+	double midterm; 
+	double final;
 	std::vector<double> homework;
+	double total;
 };
 
 bool compare(const Student_info&, const Student_info&);

@@ -9,7 +9,7 @@ using std::vector;
 
 double Student_info::grade() const
 {
-	return ::grade(midterm, final, homework);
+	return total; 
 }
 
 bool compare(const Student_info& x, const Student_info& y)
@@ -43,6 +43,7 @@ istream& Student_info::read(istream& in)
 {
 	in >> n >> midterm >> final;
 	read_hw(in, homework);
+	total = ::grade(midterm, final, homework); 
 	return in;
 }
 

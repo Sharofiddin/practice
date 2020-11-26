@@ -1,7 +1,7 @@
 #ifdef _MSC_VER
 #pragma warning(disable : 4503) // `silence compiler complaints about generated names being too long'
 #endif
-
+#include <list>
 #include <algorithm>
 #include <cstdlib>
 #include <iostream>
@@ -26,7 +26,7 @@ using std::map;
 using std::rand;
 using std::string;
 using std::vector;
-
+using std::list;
 typedef vector<string> Rule;
 typedef vector<Rule> Rule_collection;
 typedef map<string, Rule_collection> Grammar;
@@ -153,22 +153,26 @@ int main()
 	srand(time(NULL));
 	// generate the sentence
 	vector<string> sentence;
-	sentence =  gen_sentence(read_grammar(cin));
+	//sentence =  gen_sentence(read_grammar(cin));
+	list<string> sentence_l;
+	//gen_sentence_it(read_grammar(cin), std::back_inserter( sentence_l));
 	//gen_sentence_it(read_grammar(cin), std::back_inserter(sentence));
 	// write the first word, if any
+	
+	gen_sentence_it(read_grammar(cin), std::ostream_iterator<string>(cout, " "));
 #ifdef _MSC_VER
 	std::vector<string>::const_iterator it = sentence.begin();
 #else
-	vector<string>::const_iterator it = sentence.begin();
+	list<string>::const_iterator it = sentence_l.begin();
 #endif
-	if (!sentence.empty())
+	if (!sentence_l.empty())
 	{
 		cout << *it;
 		++it;
 	}
 
 	// write the rest of the words, each preceded by a space
-	while (it != sentence.end())
+	while (it != sentence_l.end())
 	{
 		cout << " " << *it;
 		++it;

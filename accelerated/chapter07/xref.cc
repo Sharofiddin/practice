@@ -40,11 +40,9 @@ map<string, vector<int> >
 	}
 	return ret;
 }
-
-template <class T>
 map<string, vector<int> >
 	xref(istream& in,
-	     vector<string> find_words(const string&) = find_urls,)
+		 vector<string> find_words(const string&) = find_urls)
 {
 	string line;
 	int line_number = 0;

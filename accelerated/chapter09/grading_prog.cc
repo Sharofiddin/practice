@@ -18,13 +18,17 @@ using std::max;
 
 #include "Student_info.h"
 #include "median.h"
+#include <algorithm>
 
+using std::partition;
 using std::cin;                    using std::cout;
 using std::domain_error;           using std::endl;
 using std::setprecision;           using std::setw;
 using std::sort;                   using std::streamsize;
 using std::string;                 using std::vector;
-
+bool pred(const Student_info& student){
+	return student.grade() > 60;
+}
 int main()
 {
 	vector<Student_info> students;
@@ -39,7 +43,7 @@ int main()
 
 	// alphabetize the student records
 	sort(students.begin(), students.end(), compare);
-
+	partition(students.begin(), students.end(), pred);//9-6
 	// write the names and grades
 #ifdef _MSC_VER
 	for (std::vector<Student_info>::size_type i = 0;

@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 class Student_info {
 public:
@@ -21,6 +22,7 @@ private:
 	double final;
 	std::vector<double> homework;
 	double total;
+	std::istream& read_hw(std::istream& , std::vector<double>& );//9-7
 };
 
 bool compare(const Student_info&, const Student_info&);

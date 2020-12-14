@@ -14,8 +14,8 @@ R median(T begin, T end, const R& initial)
 
 	if (begin == end)
 		throw domain_error("median of an empty vector");
-	vector<T> aux(begin, end);
-	typename vector<T>::size_type = aux.size();
+	vector<R> aux(begin, end);
+	typename vector<R>::size_type size = aux.size();
 	sort(aux.begin() , aux.end());
 
 	size_t mid = size/2;

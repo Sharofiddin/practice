@@ -8,27 +8,19 @@
 using std::domain_error;
 using std::sort;
 using std::vector;
-template <class T>
-T median(T* p, size_t size)
+template <class T, class R>
+R median(T begin, T end, const R& initial)
 {
-	if (size == 0)
-		throw domain_error("median of an empty vector");
 
-	sort(p , p + size);
+	if (begin == end)
+		throw domain_error("median of an empty vector");
+	vector<T> aux(begin, end);
+	typename vector<T>::size_type = aux.size();
+	sort(aux.begin() , aux.end());
 
 	size_t mid = size/2;
 
-	return size % 2 == 0 ? ( *(p+mid)+ *(p+mid-1) )/ 2 : *(p+mid);
-}
-
-template <class It, class S>
-typename It::value_type median(It b, It e, S size)
-{
-	if( size == 0 )
-		throw domain_error("empty vector");
-	sort(b,e);
-	S mid = size / 2;
-	return size % 2 == 0 ? ((*(b + mid) + *(b + mid  - 1 )) / 2) : *(b + mid);
+	return size % 2 == 0 ? ( aux[mid]+ aux[mid-1] )/ 2 : aux[mid];
 }
 #endif
 

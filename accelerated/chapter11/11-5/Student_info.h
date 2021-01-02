@@ -15,6 +15,7 @@ public:
 	~Student_info();
 	Student_info( const Student_info&);
 	Student_info operator=(const Student_info&);
+	
 	std::istream& read(std::istream&);
 
 	double grade() const;    // as defined in 9.2.1/158

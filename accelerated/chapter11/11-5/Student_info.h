@@ -19,10 +19,10 @@ public:
 	std::istream& read(std::istream&);
 
 	double grade() const;    // as defined in 9.2.1/158
-	static int getCreated();
-	static int getCopied();
-	static int getAssigned();
-	static int getDestroyed();
+	static int created;
+	static int copied;
+	static int assigned;
+	static int destroyed;
 private:
 	std::string n;
 	double midterm; 
@@ -30,10 +30,7 @@ private:
 	std::vector<double> homework;
 	double total;
 	std::istream& read_hw(std::istream& , std::vector<double>& );//9-7
-	static int created;
-	static int copied;
-	static int assigned;
-	static int destroyed;
+	
 };
 
 bool compare(const Student_info&, const Student_info&);

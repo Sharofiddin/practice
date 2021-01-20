@@ -9,32 +9,51 @@ using std::domain_error;
 using std::istream;
 using std::vector;
 
+int Student_info::created = 0;
+int Student_info::copied = 0;
+int Student_info::assigned = 0;
+int Student_info::destroyed = 0;
 double Student_info::grade() const
 {
-	
-	return ::grade(midterm, final, homework); 
+
+	return ::grade(midterm, final, homework);
 }
 
-bool compare(const Student_info& x, const Student_info& y)
+bool compare(const Student_info &x, const Student_info &y)
 {
 	return x.name() < y.name();
 }
 
-Student_info::Student_info(): midterm(0), final(0)
- {
-	 created++;
-  }
-
-Student_info::Student_info(istream& is) 
+Student_info::Student_info() : midterm(0), final(0)
 {
-	created++;
+	Student_info::created++;
+}
+
+Student_info::Student_info(istream &is)
+{
+	Student_info::created++;
 	read(is);
-}	
+}
 
-// read homework grades from an input stream into a `vector<double>'
-istream& Student_info::read_hw(istream& in, vector<double>& hw)
+Student_info::~Student_info()
 {
-	if (in) {
+	Student_info::destroyed++;
+}
+
+Student_info::Student_info(const Student_info &info)
+{
+	Student_info::copied++;
+}
+Student_info Student_info::operator=(const Student_info &info)
+{
+	Student_info::assigned++;
+	return *this;
+}
+// read homework grades from an input stream into a `vector<double>'
+istream &Student_info::read_hw(istream &in, vector<double> &hw)
+{
+	if (in)
+	{
 		// get rid of previous contents
 		hw.clear();
 
@@ -49,26 +68,9 @@ istream& Student_info::read_hw(istream& in, vector<double>& hw)
 	return in;
 }
 
-istream& Student_info::read(istream& in)
+istream &Student_info::read(istream &in)
 {
 	in >> n >> midterm >> final;
 	read_hw(in, homework);
 	return in;
-}
-
-int Student_info::getCreated()
-{
-	return created;
-}
-int Student_info::getCopied()
-{
-	return copied;
-}
-int Student_info::getAssigned()
-{
-	return assigned;
-}
-int Student_info::getDestroyed()
-{
-	return destroyed;
 }

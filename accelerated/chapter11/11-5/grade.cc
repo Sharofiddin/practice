@@ -5,7 +5,7 @@ using std::domain_error;
 using std::vector;
 
 #include "grade.h"
-#include "median.h"
+#include "../../chapter08/median.h"
 
 // compute a student's overall grade from midterm and final exam grades and homework grade
 double grade(double midterm, double final, double homework)

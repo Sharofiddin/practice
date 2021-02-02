@@ -70,9 +70,6 @@ istream &Student_info::read_hw(istream &in)
 istream &Student_info::read(istream &in)
 {
 	in >> n >> midterm >> final;
-	std::cout << "St " << n << ' ' << midterm << ' ' <<final << std::endl;
 	read_hw(in);
-	if(!valid())
-		throw domain_error("empty homework");
 	return in;
 }

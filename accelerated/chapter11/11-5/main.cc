@@ -13,7 +13,11 @@ int main()
      vector<Student_info> students;
     Student_info student;
     while(student.read(cin)){
-         cout << student.name() << " | " << student.grade() << std::endl;
+        if(!cin){
+            cout << "Input xxxx\n";
+            break;
+        }
+        cout << student.name() << " | " << student.grade() << std::endl;
         students.push_back(student);
     }
     sort(students.begin(), students.end(), compare);

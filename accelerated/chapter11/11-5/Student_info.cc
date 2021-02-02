@@ -50,18 +50,17 @@ Student_info Student_info::operator=(const Student_info &info)
 	return *this;
 }
 // read homework grades from an input stream into a `vector<double>'
-istream &Student_info::read_hw(istream &in, vector<double> &hw)
+istream &Student_info::read_hw(istream &in)
 {
 	if (in)
 	{
 		// get rid of previous contents
-		hw.clear();
+		homework.clear();
 
 		// read homework grades
 		double x;
 		while (in >> x)
-			hw.push_back(x);
-
+			homework.push_back(x);
 		// clear the stream so that input will work for the next student
 		in.clear();
 	}
@@ -71,6 +70,9 @@ istream &Student_info::read_hw(istream &in, vector<double> &hw)
 istream &Student_info::read(istream &in)
 {
 	in >> n >> midterm >> final;
-	read_hw(in, homework);
+	std::cout << "St " << n << ' ' << midterm << ' ' <<final << std::endl;
+	read_hw(in);
+	if(!valid())
+		throw domain_error("empty homework");
 	return in;
 }

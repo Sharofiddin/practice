@@ -11,13 +11,10 @@ using std::cout;
 int main()
 {
      vector<Student_info> students;
-    while(true){
-        Student_info student;
-        student.read(cin);
-        if(cin)
-            students.push_back(student);
-        else 
-            break;
+    Student_info student;
+    while(student.read(cin)){
+         cout << student.name() << " | " << student.grade() << std::endl;
+        students.push_back(student);
     }
     sort(students.begin(), students.end(), compare);
     for(vector<Student_info>::const_iterator it = students.begin(); it != students.end(); it++){

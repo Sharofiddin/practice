@@ -29,7 +29,7 @@ private:
 	double final;
 	std::vector<double> homework;
 	double total;
-	std::istream& read_hw(std::istream& , std::vector<double>& );//9-7
+	std::istream& read_hw(std::istream& );//9-7
 	
 };
 

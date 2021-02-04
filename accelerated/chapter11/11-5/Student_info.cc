@@ -47,6 +47,10 @@ Student_info::~Student_info()
 
 Student_info::Student_info(const Student_info &info)
 {
+	this->n = info.n;
+	this->final = info.final;
+	this->midterm = info.midterm;
+	this->homework = info.homework;
 	Student_info::copied++;
 }
 Student_info Student_info::operator=(const Student_info &info)

@@ -18,8 +18,8 @@ int main()
             break;
         }
 
-        cout << student.name() << " | " << student.grade() << std::endl;
         students.push_back(student);
+        cout << student.name() << " | " << student.grade() << std::endl;
     }
     cout <<"count " << students.size() << '\n';
     sort(students.begin(), students.end(), compare);

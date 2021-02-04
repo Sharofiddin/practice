@@ -4,6 +4,7 @@
 #include "grade.h"
 #include "Student_info.h"
 #include <stdexcept>
+#include <sstream>
 
 using std::domain_error;
 using std::istream;
@@ -15,7 +16,11 @@ int Student_info::assigned = 0;
 int Student_info::destroyed = 0;
 double Student_info::grade() const
 {
-
+  if(!valid()){
+		std::stringstream ss;
+		ss << "student <"<< n << "> has done none homework\n";
+		throw domain_error(ss.str());
+	}
 	return ::grade(midterm, final, homework);
 }
 
@@ -50,7 +55,7 @@ Student_info Student_info::operator=(const Student_info &info)
 	return *this;
 }
 // read homework grades from an input stream into a `vector<double>'
-istream &Student_info::read_hw(istream &in)
+istream& Student_info::read_hw(istream &in)
 {
 	if (in)
 	{
@@ -63,13 +68,14 @@ istream &Student_info::read_hw(istream &in)
 			homework.push_back(x);
 		// clear the stream so that input will work for the next student
 		in.clear();
-	}
+	} else{
+		std::cout << "in false\n";
+	}	
 	return in;
 }
 
-istream &Student_info::read(istream &in)
+istream& Student_info::read(istream &in)
 {
 	in >> n >> midterm >> final;
-	read_hw(in);
-	return in;
+	return read_hw(in);
 }

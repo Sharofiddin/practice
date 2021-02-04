@@ -10,5 +10,13 @@
         "bitset": "c",
         "string_view": "c",
         "initializer_list": "c"
+        "*.tcc": "cpp",
+        "fstream": "cpp",
+        "iosfwd": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "sstream": "cpp",
+        "streambuf": "cpp",
+        "iostream": "cpp"
     }
 }

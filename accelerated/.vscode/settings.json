@@ -2,6 +2,13 @@
     "files.associations": {
         "ostream": "cpp",
         "cstdlib": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "iostream": "cpp",
+        "algorithm": "cpp",
+        "utility": "cpp",
+        "array": "c",
+        "bitset": "c",
+        "string_view": "c",
+        "initializer_list": "c"
     }
 }

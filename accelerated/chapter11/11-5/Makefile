@@ -1,5 +1,5 @@
-CXX = g++
-CC = g++
+CXX = g++ -Wall
+CC = g++ -Wall
 CXXFLAGS = -I. -I../../chapter08
 
 debug: CXXFLAGS += -DDEBUG -g

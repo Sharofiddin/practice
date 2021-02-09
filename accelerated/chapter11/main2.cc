@@ -161,7 +161,6 @@ int main()
 	}
 	students.clear();
 	cout << "After clear() size = " << students.size() << '\n';
-
 	return 0;
 }
 

@@ -46,6 +46,7 @@ public:
 	void clear();
 	bool empty() const { return data == avail; }
 	void erase(iterator);
+	void erase(iterator, iterator );
 private:
 	iterator data;	// first element in the `Vec'
 	iterator avail;	// (one past) the last element in the `Vec'
@@ -165,9 +166,18 @@ void Vec<T>::erase(Vec<T>::iterator pos)
 	while (pos != avail)
 	{
 		*pos = *(pos+1);
+		pos++;
 	}
 
 	avail--;
 	
+}
+template<class T>
+void Vec<T>::erase(Vec<T>::iterator b, Vec<T>::iterator e)
+{
+	while(b < e){
+		erase(b);
+		b++;
+	}
 }
 #endif

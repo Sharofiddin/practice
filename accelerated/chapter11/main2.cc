@@ -115,17 +115,24 @@ int main()
 	string::size_type maxlen = 0;
 
 	// read and store all the records, and find the length of the longest name
+	cout << "Reading students ...\n";
 	while (read(cin, record)) {
 		maxlen = max(maxlen, record.name.size());
 		students.push_back(record);
-	}
 
-	// alphabetize the records
-	Vec<Student_info>::iterator it = std::find_if(students.begin(), students.end(),fail);
-	while(it){
-		students.erase(it);
-		it = std::find_if(students.begin(), students.end(),fail);
 	}
+	cout << "Reading students is end\n";
+	// alphabetize the records
+	cout << "Finding students that don't complete hw\n";
+	Vec<Student_info>::iterator it = std::find_if(students.begin(), students.end(),fail);
+	cout << "Erasing students that don't complete hw\n";
+	students.erase(it, students.end());
+	// while(it!= students.end()){
+	// 	cout << "found student with no HW name " << it->name << '\n';
+	// 	students.erase(it);
+	// 	it = std::find_if(students.begin(), students.end(),fail);
+	// }
+	cout <<"process finished\n";
 	sort(students.begin(), students.end(), compare);
 
 #ifdef _MSC_VER

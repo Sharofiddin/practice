@@ -10,13 +10,9 @@ using std::cout;
 int main()
 {
     vector<Student_info> students;
-    while(true){
-        Student_info student;
-        student.read(cin);
-        if(cin)
+    Student_info student;
+    while(student.read(cin)){
             students.push_back(student);
-        else 
-            break;
     }
     sort(students.begin(), students.end(), compare);
     for(vector<Student_info>::const_iterator it = students.begin(); it != students.end(); it++){

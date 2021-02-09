@@ -22,7 +22,8 @@ using std::setw;
 using std::sort;
 using std::streamsize;
 using std::string;
-
+using std::remove_if;
+using std::find;
 
 struct Student_info {
 	string name;
@@ -98,7 +99,10 @@ istream& read(istream& is, Student_info& s)
 	read_hw(is, s.homework);  // read and store all the student's homework grades
 	return is;
 }
-
+bool fail(const Student_info& student)
+{
+	return grade(student) < 60;
+}
 bool compare(const Student_info& x, const Student_info& y)
 {
 	return x.name < y.name;
@@ -117,6 +121,11 @@ int main()
 	}
 
 	// alphabetize the records
+	Vec<Student_info>::iterator it = std::find_if(students.begin(), students.end(),fail);
+	while(it){
+		students.erase(it);
+		it = std::find_if(students.begin(), students.end(),fail);
+	}
 	sort(students.begin(), students.end(), compare);
 
 #ifdef _MSC_VER

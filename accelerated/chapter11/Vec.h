@@ -45,7 +45,7 @@ public:
 	const_iterator end() const { return avail; }     // changed
 	void clear();
 	bool empty() const { return data == avail; }
-
+	void erase(iterator);
 private:
 	iterator data;	// first element in the `Vec'
 	iterator avail;	// (one past) the last element in the `Vec'
@@ -58,7 +58,7 @@ private:
 	void create();
 	void create(size_type, const T&);
 	void create(const_iterator, const_iterator);
-	void erase(iterator);
+	
 	// destroy the elements in the array and free the memory
 	void uncreate();
 

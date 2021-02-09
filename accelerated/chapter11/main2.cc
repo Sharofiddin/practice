@@ -156,8 +156,11 @@ int main()
 			cout << e.what();
 		}
 
+		
 		cout << endl;
 	}
+	students.clear();
+	cout << "After clear() size = " << students.size() << '\n';
 
 	return 0;
 }

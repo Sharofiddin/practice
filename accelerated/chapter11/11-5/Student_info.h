@@ -18,7 +18,7 @@ public:
 	
 	std::istream& read(std::istream&);
 
-	double grade() const;    // as defined in 9.2.1/158
+	double grade() const;   
 	static int created;
 	static int copied;
 	static int assigned;

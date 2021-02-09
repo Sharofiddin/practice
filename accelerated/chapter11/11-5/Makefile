@@ -14,4 +14,4 @@ main: main.o Student_info.o grade.o
 clobber: 
 	rm -rf *.o test Student_info main
 test: main
-	./main <../../data/grades_my
+	./main <../../data/grades_min

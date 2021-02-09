@@ -43,7 +43,7 @@ public:
 
 	iterator end() { return avail; }                 // changed
 	const_iterator end() const { return avail; }     // changed
-	void clear() { uncreate(); }
+	void clear();
 	bool empty() const { return data == avail; }
 
 private:
@@ -58,7 +58,7 @@ private:
 	void create();
 	void create(size_type, const T&);
 	void create(const_iterator, const_iterator);
-
+	void erase(iterator);
 	// destroy the elements in the array and free the memory
 	void uncreate();
 
@@ -153,4 +153,21 @@ Vec<T>& Vec<T>::operator=(const Vec& rhs)
 	return *this;
 }
 
+template<class T>
+void Vec<T>::clear()
+{
+	uncreate();
+}
+
+template<class T>
+void Vec<T>::erase(Vec<T>::iterator pos)
+{
+	while (pos != avail)
+	{
+		*pos = *(pos+1);
+	}
+
+	avail--;
+	
+}
 #endif

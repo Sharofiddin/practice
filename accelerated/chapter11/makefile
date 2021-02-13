@@ -34,7 +34,7 @@ test:		all
 	./analysis < ../data/grades
 	./main2 < ../data/single_grade
 	./main2 < ../data/grades
-	./main3 < ../data/grades
+	./main3 < ../data/grades_my
 
 clobber:
 	rm -f *.o *.exe core urls_main analysis main2 main3

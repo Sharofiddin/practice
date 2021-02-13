@@ -30,9 +30,9 @@ public:
 	T& operator[](size_type i) { return data[i]; }
 	const T& operator[](size_type i) const { return data[i]; }
 
-	void push_back(const T& t) {
+	void push_back(const T& t, bool doubled=true) {
 		if (avail == limit)
-			grow();
+			grow(doubled);
 		unchecked_append(t);
 	}
 
@@ -64,7 +64,7 @@ private:
 	void uncreate();
 
 	// support functions for `push_back'
-	void grow();
+	void grow(bool);
 	void unchecked_append(const T&);
 };
 
@@ -111,10 +111,10 @@ template <class T> void Vec<T>::uncreate()
 
 }
 
-template <class T> void Vec<T>::grow()
+template <class T> void Vec<T>::grow(bool doubled)
 {
 	// when growing, allocate twice as much space as currently in use
-	size_type new_size = max(2 * (limit - data), ptrdiff_t(1));
+	size_type new_size = doubled ? max(2 * (limit - data), ptrdiff_t(1)) :max(limit - data + 1, ptrdiff_t(1));
 
 	// allocate new space and copy existing elements to the new space
 #ifdef _MSC_VER

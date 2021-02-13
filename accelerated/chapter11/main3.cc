@@ -9,11 +9,12 @@
 #include "Vec.h"
 #include "grade.h"
 #include "Student_info.h"
-
+#include <chrono>
 using std::cin;                     using std::setprecision;
 using std::cout;                    using std::sort;
 using std::domain_error;            using std::streamsize;
-using std::endl;                    using std::string;
+using std::endl;
+using std::chrono::steady_clock; 	using std::string;
 #ifndef _MSC_VER
 using std::max;
 #else
@@ -22,8 +23,9 @@ using std::max;
 #include "../minmax.h"
 #endif
 
-int main()
+long long  test(bool doubled)
 {
+	long long res = 0;
 	Vec<Student_info> students;
 	Student_info record;
 	string::size_type maxlen = 0;       // the length of the longest name
@@ -34,7 +36,8 @@ int main()
 	while (read(cin, record)) {
 		// find length of longest name
 		maxlen = max(maxlen, record.name.size());
-		students.push_back(record);
+		students.push_back(record,doubled);
+		res++;
 	}
 
 	// alphabetize the student records
@@ -63,6 +66,18 @@ int main()
 		}
 		cout << endl;
 	}
-	return 0;
+	return res;
+}
+
+int main()
+{
+	bool doubled;
+	cin >> doubled;
+	steady_clock::time_point begin = std::chrono::steady_clock::now();
+  	long long pushes = test(doubled);
+  	steady_clock::time_point end = std::chrono::steady_clock::now();
+  	std::cout << "Microseconds to add " << pushes << " to vector " <<((!doubled) ? " without ":"") 
+	  << "using double memory method = " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << "microseconds" << endl;
+	
 }
 

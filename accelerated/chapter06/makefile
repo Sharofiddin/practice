@@ -106,7 +106,7 @@ test_ext_didnt: ext_didnt
 test_ext_by_creteria: ext_by_creteria
 	./ext_by_creteria <../data/grades
 clobber:
-	rm -f *.o *.exe core split_main palin urls_main grade_analysis \
+	rm -rf *.o *.exe core split_main palin urls_main grade_analysis \
 	ext_fails1 ext_fails2 6-1_main main_urls\
-	6-5 ext_didnt ext_by_creteria
+	6-5 6-3 6-4-3 6-4-2 6-4 ext_didnt ext_by_creteria
 

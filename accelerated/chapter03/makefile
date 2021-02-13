@@ -8,4 +8,5 @@ test:		all
 	./med <../data/single_grade
 
 clobber:
-	rm -f *.o *.exe core avg med
+	rm -f *.o *.exe core avg med\
+		3-2 3-3 3-4 3-5 3-6

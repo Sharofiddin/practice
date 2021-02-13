@@ -18,7 +18,6 @@
 #ifndef STRING_LIST_GUARD
 #define STRING_LIST_GUARD
 #include <string>
-#include <list>
 struct node
 {
 	std::string val;

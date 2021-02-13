@@ -49,4 +49,4 @@ test:		all
 	./8-3
 
 clobber:
-	rm -f *.o *.exe core split_main main3 analysis 8-2_test stl_algs_test 8-8 8-3
+	rm -f *.o *.exe *.out core split_main main3 analysis 8-2_test stl_algs stl_algs_test 8-8 8-3 8-2

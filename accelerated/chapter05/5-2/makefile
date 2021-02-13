@@ -32,4 +32,4 @@ main_list:	main_list.o grade.o median.o Student_info.o
 main_5_3_4: 	main_5_3_4.o grade.o median.o Student_info.o
 
 clobber:
-	rm -f *.o  main_vec main_list main_5_3_4
+	rm -f *.o  main_vec grades_two_in_one main_list main_5_3_4 grades

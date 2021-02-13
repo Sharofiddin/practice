@@ -41,6 +41,7 @@ test_student_info_map_to_letter: student_info_map_to_letter
 test_grammar_list: grammar_list
 		./grammar_list <../data/grammar_input
 clobber:
-	rm -f *.o *.exe core wc xref grammar\
+	rm -f *.o *.exe *.out core wc xref grammar\
 		test_student_info_map_to_letter\
-		grammar_list
+		grammar_list student_info_map_to_letter\
+		myrand

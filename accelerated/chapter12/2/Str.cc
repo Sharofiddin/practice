@@ -1,15 +1,15 @@
 #include "Str.h"
 #include <iostream>
-char &Str::operator[](Str::size_type i) { return data[i]; }
-const char &Str::operator[](size_type i) const { return data[i]; }
+char &Str::operator[](Str::size_type i) { return data_p[i]; }
+const char &Str::operator[](size_type i) const { return data_p[i]; }
 std::istream &operator>>(std::istream &is, Str &str)
 {
-    is >> str.data;
+    is >> str.data_p;
     return is;
 };
 std::ostream &operator<<(std::ostream &os, const Str &str)
 {
-    os << str.data;
+    os << str.data_p;
     return os;
 };
 // default constructor; create an empty Str
@@ -47,7 +47,7 @@ Str::Str(const_iterator b, const_iterator e)
 
 Str::iterator Str::begin()
 {
-    return data;
+    return data_p;
 }
 Str::iterator Str::end()
 {
@@ -55,7 +55,7 @@ Str::iterator Str::end()
 }
 Str::const_iterator Str::begin() const
 {
-    return data;
+    return data_p;
 }
 	
 Str::const_iterator Str::end() const
@@ -64,47 +64,57 @@ Str::const_iterator Str::end() const
 }
 void Str::create()
 {
-    data = avail = limit = 0;
+    data_p = avail = limit = 0;
 }
 void Str::create(const_iterator b, const_iterator e)
 {
     ptrdiff_t buff_size = e-b;
-    data = alloc.allocate(buff_size);
-    avail=limit=data+buff_size;
-    std::uninitialized_copy(b, e, data);
+    data_p = alloc.allocate(buff_size);
+    avail=limit=data_p+buff_size;
+    std::uninitialized_copy(b, e, data_p);
 }
 void Str::create(size_type s, char c)
 {
-    data = alloc.allocate(s);
-    limit = avail = data + s;
-    std::uninitialized_fill(data, limit, c);
+    data_p = alloc.allocate(s);
+    limit = avail = data_p + s;
+    std::uninitialized_fill(data_p, limit, c);
 }
 void Str::grow()
 {
     // when growing, allocate twice as much space as currently in use
-    size_type new_size = std::max(2 * (limit - data), ptrdiff_t(1));
+    size_type new_size = std::max(2 * (limit - data_p), ptrdiff_t(1));
     // allocate new space and copy existing elements to the new space
     iterator new_data = alloc.allocate(new_size);
-    iterator new_avail = std::uninitialized_copy(data, avail, new_data);
+    iterator new_avail = std::uninitialized_copy(data_p, avail, new_data);
     // return the old space
     uncreate();
     // reset pointers to point to the newly allocated space
-    data = new_data;
+    data_p = new_data;
     // reset pointers to point to the newly allocated space
-    data = new_data;
+    data_p = new_data;
     avail = new_avail;
-    limit = data + new_size;
+    limit = data_p + new_size;
 }
 void Str::uncreate()
 {
     iterator it = avail;
-    while (it != data)
+    while (it != data_p)
         alloc.destroy(--it);
-    alloc.deallocate(data, limit - data);
-    data = avail = limit = 0;
+    alloc.deallocate(data_p, limit - data_p);
+    data_p = avail = limit = 0;
 }
 
 void Str::unchecked_append(const char c)
 {
     alloc.construct(avail++, c);
+}
+
+const char * Str::c_str() const 
+{
+    return data_p;
+}
+
+const char * Str::data() const 
+{
+    return data_p;
 }

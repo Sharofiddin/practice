@@ -4,7 +4,6 @@
 #include <algorithm>
 #include <cstddef>
 #include <memory>
-
 #ifdef _MSC_VER
 #include "../minmax.h"
 #else
@@ -20,7 +19,10 @@ public:
 	typedef T& reference;
 	typedef const T& const_reference;
 
-	Vec() { create(); }
+	Vec() 
+	{
+		create();
+	}
 	explicit Vec(size_type n, const T& t = T()) { create(n, t); }
 
 	Vec(const Vec& v) { create(v.begin(), v.end()); }

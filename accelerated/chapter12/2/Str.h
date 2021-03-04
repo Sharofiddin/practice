@@ -29,10 +29,12 @@ public:
 	void append(const char );
 	// create a Str from the range denoted by iterators b and
 	Str(const_iterator , const_iterator );
-
+	const char* c_str() const;
+	const char* data() const;
+	size_type copy( char* dest, size_type count, size_type pos = 0 ) const;
 private:
 	size_t s;
-	iterator data;
+	iterator data_p;
 	iterator avail;
 	iterator limit;
 	std::allocator<char> alloc;

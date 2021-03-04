@@ -12,6 +12,31 @@ std::ostream &operator<<(std::ostream &os, const Str &str)
     os << str.data_p;
     return os;
 };
+
+bool operator>(const Str &s1, const Str& s2)
+{
+    return strcmp(s1.c_str(),s2.c_str()) > 0;
+}
+bool operator<(const Str &s1, const Str& s2)
+{
+    return strcmp(s1.c_str(),s2.c_str()) < 0;
+}
+bool operator>=(const Str &s1, const Str& s2 )
+{
+    return strcmp(s1.c_str(),s2.c_str()) >= 0;
+}
+bool operator<=(const Str &s1, const Str& s2 )
+{
+    return strcmp(s1.c_str(),s2.c_str()) <= 0;
+}
+bool operator==(const Str &s1, const Str& s2)
+{
+    return strcmp(s1.c_str(),s2.c_str()) == 0;
+}
+bool operator!=(const Str & s1, const Str& s2 )
+{
+    return strcmp(s1.c_str(),s2.c_str()) != 0;
+}
 // default constructor; create an empty Str
 Str::Str()
 {

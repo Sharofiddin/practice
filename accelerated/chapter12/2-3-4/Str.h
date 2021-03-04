@@ -4,7 +4,7 @@
 #include <iterator>
 #include <memory>
 #include <algorithm>
-
+#include <cstring>
 class Str
 {
 public:
@@ -15,6 +15,12 @@ public:
 	const char &operator[](size_type i) const;
 	friend std::istream &operator>>(std::istream &is, Str &str);
 	friend std::ostream &operator<<(std::ostream &os, const Str &str);
+	friend bool operator>(const Str &, const Str& );
+	friend bool operator<(const Str &, const Str& );
+	friend bool operator>=(const Str &, const Str& );
+	friend bool operator<=(const Str &, const Str& );
+	friend bool operator==(const Str &, const Str& );
+	friend bool operator!=(const Str &, const Str& );
 	iterator begin();
 	const_iterator begin() const;
 	iterator end();

@@ -79,6 +79,21 @@ void Str::create(size_type s, char c)
     limit = avail = data_p + s;
     std::uninitialized_fill(data_p, limit, c);
 }
+
+Str::size_type Str::copy( char* dest, size_type count, size_type pos) const
+{
+    size_type size = end() - begin();
+    if(pos > size) {
+        std::cerr << "starting position over size\n";
+        return -1;
+    }
+    if( pos + count > size )
+        count = size - pos;
+    for(size_type i = 0; i < count; i++)
+        dest[i] = data_p[ i + pos ];
+    return count;
+}
+
 void Str::grow()
 {
     // when growing, allocate twice as much space as currently in use

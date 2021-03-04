@@ -82,10 +82,10 @@ void Str::create(size_type s, char c)
 
 Str::size_type Str::copy( char* dest, size_type count, size_type pos) const
 {
-    size_type size = end() - begin();
+    size_type size = avail - data_p;
     if(pos > size) {
         std::cerr << "starting position over size\n";
-        return -1;
+        return 0;
     }
     if( pos + count > size )
         count = size - pos;

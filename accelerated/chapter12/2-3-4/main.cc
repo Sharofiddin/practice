@@ -43,8 +43,24 @@ int main()
     std::cout <<str << " < " << str2 << " is " << (str < str2) << std::endl; 
     std::cout <<str << " == " << str2 << " is " << (str == str2) << std::endl; 
     std::cout <<str << " != " << str2 << " is " << (str != str2) << std::endl; 
-    std::cout << str.append(str2) << " " << str << std::endl;
-    str.append('a');
+    std::cout << str << " + " << str2 << " = " << str + str2 << std::endl;
+    std::cout << str2.append(str) << " " << str2 << std::endl;
+    str2+=str;
+    std::cout << str2 <<  " " << str2.size() << std::endl;
+
+    std::cout << str.append("salom").append("a").append(str2) << std::endl;
+    std::cout << str << std::endl;
+    std::cout << "str.empty() = " << str.empty() << std::endl;
+    str = "";
+    std::cout << "str.empty() = " << str.empty() << std::endl;
+    if(str){
+        std::cout << "str is true\n";
+    } else {
+        std::cout << "str is false\n";
+    }
+    str.append("salom");
+    str ? std::cout << "str is true\n" : std::cout << "str is false\n";
+    std::cin >> str;
     std::cout << str << std::endl;
     return 0;
 }

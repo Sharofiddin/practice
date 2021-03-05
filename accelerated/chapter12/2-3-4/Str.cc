@@ -38,9 +38,15 @@ bool operator!=(const Str & s1, const Str& s2 )
     return strcmp(s1.c_str(),s2.c_str()) != 0;
 }
 
-Str operator+(const Str &, const Str& )
+Str operator+(const Str &s1, const Str &s2 )
 {
+    Str res(s1);
+    return res.append(s2);
+}
 
+Str& Str::operator+=(const Str& s)
+{
+    return append(s);
 }
 // default constructor; create an empty Str
 Str::Str()
@@ -63,11 +69,12 @@ Str::Str(const Str& src)
 {
     create(src.begin(), src.end());
 }
-void Str::append(const char c)
+Str& Str::append(const char c)
 {
     if (avail == limit)
         grow();
     unchecked_append(c);
+    return *this;
 }
 // create a Str from the range denoted by iterators b and
 Str::Str(const_iterator b, const_iterator e)
@@ -133,6 +140,7 @@ void Str::grow()
 }
 void Str::grow(size_type new_size)
 {
+    std::string s;
     iterator new_data = alloc.allocate(new_size);
     iterator new_avail = std::uninitialized_copy(data_p, avail, new_data);
     // return the old space
@@ -169,11 +177,19 @@ Str::size_type Str::size() const
 {
     return avail - data_p;
 }
-Str Str::append(const Str& s)
+Str& Str::append(const Str& s)
 {
     size_type new_size = size() + s.size();
     if(limit  <= avail+s.size())
-        grow(new_size);
-    avail = std::uninitialized_copy(s.begin(),s.end(),data_p+size()-1);
+        grow( 3 * new_size / 2);
+    avail = std::uninitialized_copy(s.begin(),s.end(),avail);
     return *this;
+}
+bool Str::empty() const
+{
+    return data_p == avail;   
+}
+Str::operator bool() const
+{   
+    return !empty();
 }

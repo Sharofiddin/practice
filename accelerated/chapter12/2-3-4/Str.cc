@@ -37,6 +37,11 @@ bool operator!=(const Str & s1, const Str& s2 )
 {
     return strcmp(s1.c_str(),s2.c_str()) != 0;
 }
+
+Str operator+(const Str &, const Str& )
+{
+
+}
 // default constructor; create an empty Str
 Str::Str()
 {
@@ -124,16 +129,18 @@ void Str::grow()
     // when growing, allocate twice as much space as currently in use
     size_type new_size = std::max(2 * (limit - data_p), ptrdiff_t(1));
     // allocate new space and copy existing elements to the new space
+   grow(new_size);
+}
+void Str::grow(size_type new_size)
+{
     iterator new_data = alloc.allocate(new_size);
     iterator new_avail = std::uninitialized_copy(data_p, avail, new_data);
     // return the old space
     uncreate();
     // reset pointers to point to the newly allocated space
     data_p = new_data;
-    // reset pointers to point to the newly allocated space
-    data_p = new_data;
     avail = new_avail;
-    limit = data_p + new_size;
+    limit = data_p + new_size; 
 }
 void Str::uncreate()
 {
@@ -157,4 +164,16 @@ const char * Str::c_str() const
 const char * Str::data() const 
 {
     return data_p;
+}
+Str::size_type Str::size() const
+{
+    return avail - data_p;
+}
+Str Str::append(const Str& s)
+{
+    size_type new_size = size() + s.size();
+    if(limit  <= avail+s.size())
+        grow(new_size);
+    avail = std::uninitialized_copy(s.begin(),s.end(),data_p+size()-1);
+    return *this;
 }

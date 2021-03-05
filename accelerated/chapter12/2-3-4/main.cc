@@ -43,5 +43,8 @@ int main()
     std::cout <<str << " < " << str2 << " is " << (str < str2) << std::endl; 
     std::cout <<str << " == " << str2 << " is " << (str == str2) << std::endl; 
     std::cout <<str << " != " << str2 << " is " << (str != str2) << std::endl; 
+    std::cout << str.append(str2) << " " << str << std::endl;
+    str.append('a');
+    std::cout << str << std::endl;
     return 0;
 }

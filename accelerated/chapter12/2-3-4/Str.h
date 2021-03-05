@@ -21,6 +21,7 @@ public:
 	friend bool operator<=(const Str &, const Str& );
 	friend bool operator==(const Str &, const Str& );
 	friend bool operator!=(const Str &, const Str& );
+	friend Str  operator+(const Str &, const Str& );
 	iterator begin();
 	const_iterator begin() const;
 	iterator end();
@@ -33,10 +34,12 @@ public:
 	Str(const char *);
 	Str(const Str&);
 	void append(const char );
+	Str append(const Str&);
 	// create a Str from the range denoted by iterators b and
 	Str(const_iterator , const_iterator );
 	const char* c_str() const;
 	const char* data() const;
+	size_type size() const;
 	size_type copy( char* dest, size_type count, size_type pos = 0 ) const;
 private:
 	size_t s;
@@ -48,6 +51,7 @@ private:
 	void create(const_iterator , const_iterator );
 	void create(size_type , char );
 	void grow();
+	void grow(size_type);
 	void uncreate();
 	void unchecked_append(const char c);
 };

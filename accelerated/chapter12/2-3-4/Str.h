@@ -22,6 +22,7 @@ public:
 	friend bool operator==(const Str &, const Str &);
 	friend bool operator!=(const Str &, const Str &);
 	friend Str operator+(const Str &, const Str &);
+	friend std::istream& getline(std::istream &, Str &s);
 	
 	iterator begin();
 	const_iterator begin() const;
@@ -35,7 +36,7 @@ public:
 	Str(const char *);
 	Str(const Str &);
 	Str& append(const char);
-	std::istream& getline(std::istream &);
+	
 	//return type should be reference otherwise different object will be returned
 	Str& append(const Str &);
 	// create a Str from the range denoted by iterators b and

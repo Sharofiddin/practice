@@ -4,14 +4,30 @@ char &Str::operator[](Str::size_type i) { return data_p[i]; }
 const char &Str::operator[](size_type i) const { return data_p[i]; }
 std::istream &operator>>(std::istream &is, Str &str)
 {
-    is >> str.data_p;
+    // obliterate existing value(s)
+    str.uncreate();
+    // read and discard leading whitespace
+    char c;
+    while (is.get(c) && isspace(c))
+    ; // nothing to do, except testing the condition
+    // if still something to read, do so until next whitespace character
+    if(is) {
+        do 
+            str.append(c);
+            // compile error! , data is private
+        while (is.get(c) && !isspace(c));
+        // if we read whitespace, then put it back on the stream
+        if (is)
+            is.unget();
+    }
     return is;
-};
+}
 std::ostream &operator<<(std::ostream &os, const Str &str)
 {
-    os << str.data_p;
+    for (Str::size_type i = 0; i != str.size(); ++i)
+        os << str[i];
     return os;
-};
+}
 
 bool operator>(const Str &s1, const Str& s2)
 {
@@ -140,7 +156,6 @@ void Str::grow()
 }
 void Str::grow(size_type new_size)
 {
-    std::string s;
     iterator new_data = alloc.allocate(new_size);
     iterator new_avail = std::uninitialized_copy(data_p, avail, new_data);
     // return the old space
@@ -192,4 +207,21 @@ bool Str::empty() const
 Str::operator bool() const
 {   
     return !empty();
+}
+
+std::istream& getline(std::istream &is, Str &s)
+{
+    s = "";
+    std::cout << "start collecting ...\n";
+    Str temp;
+    char c;
+    while ((is >> temp) && is.get(c))
+    {
+       s.append(temp);
+       if(c == '\n')
+            break;
+        s.append(c);
+    }
+    is.clear();
+    return is;
 }

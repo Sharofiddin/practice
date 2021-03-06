@@ -62,5 +62,8 @@ int main()
     str ? std::cout << "str is true\n" : std::cout << "str is false\n";
     std::cin >> str;
     std::cout << str << std::endl;
+    Str s_temp;
+    getline(std::cin,  s_temp);
+    std::cout << s_temp << std::endl;
     return 0;
 }

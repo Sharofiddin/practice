@@ -5,6 +5,7 @@
 #include <memory>
 #include <algorithm>
 #include <cstring>
+#include <iostream>
 class Str
 {
 public:
@@ -22,6 +23,8 @@ public:
 	friend bool operator==(const Str &, const Str &);
 	friend bool operator!=(const Str &, const Str &);
 	friend Str operator+(const Str &, const Str &);
+	friend Str operator+(const char *, const Str &);
+	friend Str operator+( const Str &, const char *);
 	friend std::istream& getline(std::istream &, Str &s);
 	
 	iterator begin();
@@ -47,9 +50,18 @@ public:
 	size_type size() const;
 	size_type copy(char *dest, size_type count, size_type pos = 0) const;
 	Str &operator+=(const Str &);
+	Str substr(const size_type,  const size_type) const;
+	template <class In>
+  	void insert(iterator position, In first, In last)
+	  {
+		  Str first_part(data_p, position);
+		  Str secon_part(position, avail);
+		  Str middle(first,last);
+		  std::cout << first_part << " "<<middle <<" "<< secon_part << std::endl;
+		  *this = first_part + middle + secon_part;
+	  }
 	bool empty() const;
 private:
-	size_t s;
 	iterator data_p;
 	iterator avail;
 	iterator limit;

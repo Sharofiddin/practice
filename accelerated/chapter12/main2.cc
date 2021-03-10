@@ -142,7 +142,9 @@ int main()
 
 		cout << endl;
 	}
-
+	Str s1("1qazxsw2");
+	Str s2(s1.begin(), s1.end());
+	std::cout << s2 << std::endl;
 	return 0;
 }
 

@@ -62,8 +62,19 @@ int main()
     str ? std::cout << "str is true\n" : std::cout << "str is false\n";
     std::cin >> str;
     std::cout << str << std::endl;
-    Str s_temp;
-    getline(std::cin,  s_temp);
-    std::cout << s_temp << std::endl;
+    getline(std::cin,  str);
+    getline(std::cin,  str);
+    std::cout << str << std::endl;
+    str2 = "assalomu do'stim";
+    str3 = "alaykum ";
+    str2.insert(str2.begin()+9, str3.begin(), str3.end());
+    std::cout << str2 << std::endl;
+    std::cout << str3.substr(3,1000) << std::endl;
+    try{
+        std::cout << str3.substr(1000,1000) << std::endl;
+    } catch(std::domain_error& err){
+        std::cout <<"ERR is catched: " << err.what() << std::endl;
+    }
+
     return 0;
 }

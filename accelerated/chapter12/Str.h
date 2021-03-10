@@ -35,7 +35,7 @@ public:
 #endif
 	}
 	template <class In> Str(In i, In j) {
-		std::copy(i, j, std::back_inserter(data));
+		data = Vec<char>(i, j);
 	}
 
 	char& operator[](size_type i) { return data[i]; }

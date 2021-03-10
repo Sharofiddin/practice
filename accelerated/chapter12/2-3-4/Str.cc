@@ -1,20 +1,24 @@
 #include "Str.h"
 #include <iostream>
+
 char &Str::operator[](Str::size_type i) { return data_p[i]; }
 const char &Str::operator[](size_type i) const { return data_p[i]; }
 std::istream &operator>>(std::istream &is, Str &str)
 {
+    // we can not use istream_iterator because it has not got unget()
+    //std::istream_iterator<char> it(is);
     // obliterate existing value(s)
     str.uncreate();
     // read and discard leading whitespace
     char c;
     while (is.get(c) && isspace(c))
-    ; // nothing to do, except testing the condition
+        ; // nothing to do, except testing the condition
     // if still something to read, do so until next whitespace character
-    if(is) {
-        do 
+    if (is)
+    {
+        do
             str.append(c);
-            // compile error! , data is private
+        // compile error! , data is private
         while (is.get(c) && !isspace(c));
         // if we read whitespace, then put it back on the stream
         if (is)
@@ -24,43 +28,53 @@ std::istream &operator>>(std::istream &is, Str &str)
 }
 std::ostream &operator<<(std::ostream &os, const Str &str)
 {
-    for (Str::size_type i = 0; i != str.size(); ++i)
-        os << str[i];
+    std::ostream_iterator<char> osit(os);
+    copy(str.begin(), str.end(), osit);
     return os;
 }
 
-bool operator>(const Str &s1, const Str& s2)
+bool operator>(const Str &s1, const Str &s2)
 {
-    return strcmp(s1.c_str(),s2.c_str()) > 0;
+    return strcmp(s1.c_str(), s2.c_str()) > 0;
 }
-bool operator<(const Str &s1, const Str& s2)
+bool operator<(const Str &s1, const Str &s2)
 {
-    return strcmp(s1.c_str(),s2.c_str()) < 0;
+    return strcmp(s1.c_str(), s2.c_str()) < 0;
 }
-bool operator>=(const Str &s1, const Str& s2 )
+bool operator>=(const Str &s1, const Str &s2)
 {
-    return strcmp(s1.c_str(),s2.c_str()) >= 0;
+    return strcmp(s1.c_str(), s2.c_str()) >= 0;
 }
-bool operator<=(const Str &s1, const Str& s2 )
+bool operator<=(const Str &s1, const Str &s2)
 {
-    return strcmp(s1.c_str(),s2.c_str()) <= 0;
+    return strcmp(s1.c_str(), s2.c_str()) <= 0;
 }
-bool operator==(const Str &s1, const Str& s2)
+bool operator==(const Str &s1, const Str &s2)
 {
-    return strcmp(s1.c_str(),s2.c_str()) == 0;
+    return strcmp(s1.c_str(), s2.c_str()) == 0;
 }
-bool operator!=(const Str & s1, const Str& s2 )
+bool operator!=(const Str &s1, const Str &s2)
 {
-    return strcmp(s1.c_str(),s2.c_str()) != 0;
+    return strcmp(s1.c_str(), s2.c_str()) != 0;
 }
 
-Str operator+(const Str &s1, const Str &s2 )
+Str operator+(const Str &s1, const Str &s2)
 {
     Str res(s1);
     return res.append(s2);
 }
 
-Str& Str::operator+=(const Str& s)
+Str operator+(const char *c_arr, const Str &str)
+{
+    return Str(c_arr).append(str);
+}
+
+Str operator+( const Str &str, const char *c_arr)
+{
+    return Str(str).append(c_arr);
+}
+
+Str &Str::operator+=(const Str &s)
 {
     return append(s);
 }
@@ -81,11 +95,11 @@ Str::Str(const char *cp)
     create(cp, cp + src_size);
 };
 
-Str::Str(const Str& src)
+Str::Str(const Str &src)
 {
     create(src.begin(), src.end());
 }
-Str& Str::append(const char c)
+Str &Str::append(const char c)
 {
     if (avail == limit)
         grow();
@@ -110,7 +124,7 @@ Str::const_iterator Str::begin() const
 {
     return data_p;
 }
-	
+
 Str::const_iterator Str::end() const
 {
     return avail;
@@ -121,9 +135,9 @@ void Str::create()
 }
 void Str::create(const_iterator b, const_iterator e)
 {
-    ptrdiff_t buff_size = e-b;
+    ptrdiff_t buff_size = e - b;
     data_p = alloc.allocate(buff_size);
-    avail=limit=data_p+buff_size;
+    avail = limit = data_p + buff_size;
     std::uninitialized_copy(b, e, data_p);
 }
 void Str::create(size_type s, char c)
@@ -133,17 +147,18 @@ void Str::create(size_type s, char c)
     std::uninitialized_fill(data_p, limit, c);
 }
 
-Str::size_type Str::copy( char* dest, size_type count, size_type pos) const
+Str::size_type Str::copy(char *dest, size_type count, size_type pos) const
 {
     size_type size = avail - data_p;
-    if(pos > size) {
+    if (pos > size)
+    {
         std::cerr << "starting position over size\n";
         return 0;
     }
-    if( pos + count > size )
+    if (pos + count > size)
         count = size - pos;
-    for(size_type i = 0; i < count; i++)
-        dest[i] = data_p[ i + pos ];
+    for (size_type i = 0; i < count; i++)
+        dest[i] = data_p[i + pos];
     return count;
 }
 
@@ -152,7 +167,7 @@ void Str::grow()
     // when growing, allocate twice as much space as currently in use
     size_type new_size = std::max(2 * (limit - data_p), ptrdiff_t(1));
     // allocate new space and copy existing elements to the new space
-   grow(new_size);
+    grow(new_size);
 }
 void Str::grow(size_type new_size)
 {
@@ -163,7 +178,7 @@ void Str::grow(size_type new_size)
     // reset pointers to point to the newly allocated space
     data_p = new_data;
     avail = new_avail;
-    limit = data_p + new_size; 
+    limit = data_p + new_size;
 }
 void Str::uncreate()
 {
@@ -179,12 +194,12 @@ void Str::unchecked_append(const char c)
     alloc.construct(avail++, c);
 }
 
-const char * Str::c_str() const 
+const char *Str::c_str() const
 {
     return data_p;
 }
 
-const char * Str::data() const 
+const char *Str::data() const
 {
     return data_p;
 }
@@ -192,36 +207,38 @@ Str::size_type Str::size() const
 {
     return avail - data_p;
 }
-Str& Str::append(const Str& s)
+Str &Str::append(const Str &s)
 {
     size_type new_size = size() + s.size();
-    if(limit  <= avail+s.size())
-        grow( 3 * new_size / 2);
-    avail = std::uninitialized_copy(s.begin(),s.end(),avail);
+    if (limit <= avail + s.size())
+        grow(3 * new_size / 2);
+    avail = std::uninitialized_copy(s.begin(), s.end(), avail);
     return *this;
 }
 bool Str::empty() const
 {
-    return data_p == avail;   
+    return data_p == avail;
 }
 Str::operator bool() const
-{   
+{
     return !empty();
 }
 
-std::istream& getline(std::istream &is, Str &s)
+std::istream &getline(std::istream &is, Str &s)
 {
-    s = "";
-    std::cout << "start collecting ...\n";
-    Str temp;
+    s.uncreate();
     char c;
-    while ((is >> temp) && is.get(c))
-    {
-       s.append(temp);
-       if(c == '\n')
-            break;
+    do
         s.append(c);
-    }
-    is.clear();
+    while (is.get(c) && c != '\n');
     return is;
+}
+Str Str::substr(size_type pos,  size_type count) const
+{
+    size_type st_size = size();
+    if(pos >= st_size )
+        throw std::domain_error("out of the range");
+    if((pos + count) > st_size)
+        count = st_size - pos;
+    return Str(data_p+pos, data_p+pos+count);
 }

@@ -8,11 +8,17 @@
 
 class Core {
 public:
-	Core(): midterm(0), final(0) { }
-	Core(std::istream& is) { read(is); }
+	Core(): midterm(0), final(0) {
+		 std::cerr << "Core()" << std::endl;
+		 }
+	Core(std::istream& is) { 
+		std::cerr << "Core(std::istream&)" << std::endl;
+		read(is);
+		 }
 
 	std::string name() const;
-
+	bool valid() const; //13-3
+	std::string letter_grade() const; //13-4
 	// as defined in 13.1.2/230
 	virtual std::istream& read(std::istream&);
 	virtual double grade() const;
@@ -35,8 +41,8 @@ private:
 
 class Grad: public Core {
 public:
-	Grad(): thesis(0) { }
-	Grad(std::istream& is) { read(is); }
+	Grad(): thesis(0) { std::cerr << "Grade()" <<std::endl; }
+	Grad(std::istream& is) { read(is);std::cerr << "Grade(std::istream &)" <<std::endl; }
 
 	// as defined in 13.1.2/230; Note: `grade' and `read' are `virtual' by inheritance
 	double grade() const;

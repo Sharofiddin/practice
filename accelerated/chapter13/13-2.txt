@@ -1,0 +1,24 @@
+Core* p1 = new Core;
+Core* p2 = new Grad;
+Core s1;
+Grad s2;
+p1->grade(); - Core::grade()
+p1->name();  - Core::name()
+p2->grade(); - Grad::grade() x  Core::grade()
+p2->name();  - Core::name()
+s1.grade();  - Core::grade()
+s1.name();   - Core::name()
+s2.name();   - Core::name()
+s2.grade();  - Grad::grade() x  Core::grade()
+
+//actual
+Core::grade()
+Core::name()
+Grad::grade()
+Core::grade()
+Core::name()
+Core::grade()
+Core::name()
+Core::name()
+Grad::grade()
+Core::grade()

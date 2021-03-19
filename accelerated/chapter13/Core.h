@@ -56,7 +56,18 @@ private:
 	Grad* clone() const { return new Grad(*this); }
 #endif
 };
+class Credit : public Core //13-6
+{
+	public:
+		Credit();
+		Credit(std::istream& is) { read(is); }
 
+		double grade() const;
+		bool valid() const;
+		std::istream& read(std::istream&);
+	private:
+		Credit* clone() const { return new Credit(*this); }
+};
 bool compare(const Core&, const Core&);
 bool compare_Core_ptrs(const Core* cp1, const Core* cp2);
 

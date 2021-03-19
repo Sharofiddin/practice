@@ -22,6 +22,9 @@ Grad.o:	Grad.cc Core.h
 13-5.o: 13-5.cc Core.h 
 13-5: 13-5.o grade.o  read_hw.o Core.o
 
+13-6.o: 13-6.cc Core.h 
+13-6: 13-6.o grade.o  read_hw.o Core.o
+
 Student_info.o:	Student_info.cc ../chapter08/median.h Student_info.h Core.h
 
 grade.o:	grade.cc ../chapter08/median.h Student_info.h
@@ -52,4 +55,4 @@ test:		all
 
 clobber:
 	rm -f *.o *.exe core main_core main_grad main_orig main_core_ptrs \
-		13-1 13-2 13-3 13-4 13-5 
+		13-1 13-2 13-3 13-4 13-5 13-6

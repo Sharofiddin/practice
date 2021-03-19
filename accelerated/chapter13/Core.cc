@@ -83,6 +83,23 @@ bool Grad::valid() const
 {
 	return Core::valid() && thesis > 0;
 }
+
+double Credit::grade() const
+{
+	if(homework.empty())
+		return (midterm + final) / 2.0;
+	return Core::grade();
+}
+
+bool Credit::valid() const
+{
+	return true;
+}
+
+std::istream& Credit::read(std::istream& is)
+{
+	return Core::read(is);
+}
 bool compare(const Core &c1, const Core &c2)
 {
 	return c1.name() < c2.name();

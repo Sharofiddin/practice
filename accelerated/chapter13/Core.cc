@@ -79,7 +79,10 @@ double Grad::grade() const
 	std::cout << "Grad::grade()\n";
 	return min(Core::grade(), thesis);
 }
-
+bool Grad::valid() const 
+{
+	return Core::valid() && thesis > 0;
+}
 bool compare(const Core &c1, const Core &c2)
 {
 	return c1.name() < c2.name();

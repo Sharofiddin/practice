@@ -17,12 +17,12 @@ public:
 		 }
 
 	std::string name() const;
-	bool valid() const; //13-3
+	
 	std::string letter_grade() const; //13-4
 	// as defined in 13.1.2/230
 	virtual std::istream& read(std::istream&);
 	virtual double grade() const;
-
+	virtual bool valid() const; //13-3-5
 	virtual ~Core() { }
 
 protected:
@@ -42,10 +42,11 @@ private:
 class Grad: public Core {
 public:
 	Grad(): thesis(0) { std::cerr << "Grade()" <<std::endl; }
-	Grad(std::istream& is) { read(is);std::cerr << "Grade(std::istream &)" <<std::endl; }
+	Grad(std::istream& is) { std::cerr << "Grade(std::istream &)" <<std::endl;read(is); }
 
 	// as defined in 13.1.2/230; Note: `grade' and `read' are `virtual' by inheritance
 	double grade() const;
+	bool valid() const;
 	std::istream& read(std::istream&);
 private:
 	double thesis;

@@ -16,13 +16,13 @@ std::istream &read_hw(std::istream &in, std::vector<double> &hw);
 
 string Core::name() const
 {
-	std::cerr << "Core::name()\n";
+	// std::cerr << "Core::name()\n"; //13-1
 	return n;
 }
 
 double Core::grade() const
 {
-	std::cerr << "Core::grade()\n";
+	// std::cerr << "Core::grade()\n"; //13-1
 	return ::grade(midterm, final, homework);
 }
 
@@ -76,7 +76,7 @@ istream &Grad::read(istream &in)
 
 double Grad::grade() const
 {
-	std::cout << "Grad::grade()\n";
+	// std::cout << "Grad::grade()\n"; //13-2
 	return min(Core::grade(), thesis);
 }
 bool Grad::valid() const 
@@ -99,6 +99,27 @@ bool Credit::valid() const
 std::istream& Credit::read(std::istream& is)
 {
 	return Core::read(is);
+}
+
+std::istream& Audit::read(std::istream& is)
+{
+	is >> n;
+	return is;
+}
+
+bool Audit::valid() const
+{
+	return true;
+}
+
+double Audit::grade() const
+{
+	return 0;
+}
+
+std::string Audit::letter_grade() const
+{
+	throw std::domain_error("Audit student");
 }
 bool compare(const Core &c1, const Core &c2)
 {

@@ -3,7 +3,7 @@ CC = g++
 CXXFLAGS = -I. -I../chapter08
 
 all:		main_core main_grad main_orig main_core_ptrs
-exercises:  13-1 13-2 13-3 13-4 13-5
+exercises:  13-1 13-2 13-3 13-4 13-5 13-6 13-7 13-8
 
 Core.o:	Core.cc Core.h
 
@@ -24,6 +24,12 @@ Grad.o:	Grad.cc Core.h
 
 13-6.o: 13-6.cc Core.h 
 13-6: 13-6.o grade.o  read_hw.o Core.o
+
+13-7.o: 13-7.cc Core.h 
+13-7: 13-7.o grade.o  read_hw.o Core.o
+
+13-8.o: 13-8.cc Core.h Student_info.h
+13-8: 13-8.o grade.o  read_hw.o Core.o Student_info.o
 
 Student_info.o:	Student_info.cc ../chapter08/median.h Student_info.h Core.h
 
@@ -55,4 +61,4 @@ test:		all
 
 clobber:
 	rm -f *.o *.exe core main_core main_grad main_orig main_core_ptrs \
-		13-1 13-2 13-3 13-4 13-5 13-6
+		13-1 13-2 13-3 13-4 13-5 13-6 13-7 13-8

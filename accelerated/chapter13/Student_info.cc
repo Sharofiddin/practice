@@ -12,12 +12,14 @@ istream& Student_info::read(istream& is)
 	char ch;
 	is >> ch;           // get record type
 
-	if (ch == 'U') {
-		cp = new Core(is);
-	} else {
-		cp = new Grad(is);
+	switch(ch){
+		case 'U': cp = new Core(is); break;
+		case 'G': cp = new Grad(is); break;
+		case 'C': cp = new Credit(is); break;
+		case 'A': cp = new Audit(is); break;
+		default: std::cerr << "Invalid student type\n";break;
 	}
-
+	
 	return is;
 }
 

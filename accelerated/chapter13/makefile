@@ -31,8 +31,8 @@ Grad.o:	Grad.cc Core.h
 13-8.o: 13-8.cc Core.h Student_info.h
 13-8: 13-8.o grade.o  read_hw.o Core.o Student_info.o
 
-13-8.o: 13-9.cc Core.h Student_info.h
-13-8: 13-9.o grade.o  read_hw.o Core.o Student_info.o
+13-9.o: 13-9.cc Core.h Student_info.h
+13-9: 13-9.o grade.o  read_hw.o Core.o Student_info.o
 
 Student_info.o:	Student_info.cc ../chapter08/median.h Student_info.h Core.h
 

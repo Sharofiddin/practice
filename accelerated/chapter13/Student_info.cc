@@ -39,7 +39,7 @@ Student_info::Student_info(const Student_info& s): cp(0)
 
 Student_info& Student_info::operator=(const Student_info& s)
 {
-	#ifndef 13_9
+	#ifndef EX_13_9
 		if (&s != this) { // for 13-9 checking comment this condition 
 	#endif
 		delete cp;
@@ -47,7 +47,7 @@ Student_info& Student_info::operator=(const Student_info& s)
 			cp = s.cp->clone();
 		else
 			cp = 0;
-	#ifndef 13_9
+	#ifndef EX_13_9
 		}
 	#endif
 	return *this;

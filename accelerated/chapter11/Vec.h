@@ -4,6 +4,8 @@
 #include <algorithm>
 #include <cstddef>
 #include <memory>
+#include <vector>
+#include <iostream>
 #ifdef _MSC_VER
 #include "../minmax.h"
 #else
@@ -26,6 +28,27 @@ public:
 	explicit Vec(size_type n, const T& t = T()) { create(n, t); }
 
 	Vec(const Vec& v) { create(v.begin(), v.end()); }
+	//12-10
+	Vec(const_iterator b, const_iterator e)
+	{
+		create(b,e);
+	};
+	Vec(iterator &b, iterator &e)
+	{
+		create(b,e);
+	};
+
+	template <class InputIterator>
+  	Vec(InputIterator first, InputIterator last)
+	{
+		create();
+		while(first != last)
+		{
+			push_back(*first);
+			++first;
+		}
+	}
+
 	Vec& operator=(const Vec&);	// as defined in 11.3.2/196
 	~Vec() { uncreate(); }
 
@@ -37,18 +60,35 @@ public:
 			grow(doubled);
 		unchecked_append(t);
 	}
-
+	template <class InputIterator>
+  	void assign (InputIterator first, InputIterator last) //12-12
+	  {
+		  uncreate();
+		  create(first,last);
+	  }
 	size_type size() const { return avail - data; }  // changed
 
 	iterator begin() { return data; }
-	const_iterator begin() const { return data; }
+	const_iterator cbegin() const { return data; }
 
 	iterator end() { return avail; }                 // changed
-	const_iterator end() const { return avail; }     // changed
+	const_iterator cend() const { return avail; }     // changed
 	void clear();
 	bool empty() const { return data == avail; }
 	void erase(iterator);
 	void erase(iterator, iterator );
+	
+	template <typename InputIt>
+	void insert(const_iterator pos, InputIt first, InputIt last)
+	{
+		Vec first_part(cbegin(), pos);
+		Vec second_part(pos, cend());
+		Vec middle(first, last);
+		uncreate();
+		create(first_part.begin(), first_part.end());
+		std::copy(middle.begin(), middle.end(), std::back_inserter(*this));
+		std::copy(second_part.begin(), second_part.end(), std::back_inserter(*this));
+	}
 private:
 	iterator data;	// first element in the `Vec'
 	iterator avail;	// (one past) the last element in the `Vec'

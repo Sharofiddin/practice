@@ -16,7 +16,8 @@ split_main.o:	split_main.cc split.h Str.h
 split_main2.o:	split_main2.cc split.h Str.h
 
 split_main:	split_main.o split.o Str.o
-
+12_15.o: Str.o 12_15.cc Str.h
+12_15: Str.h 12_15.o Str.o
 split_main2:	split_main2.o split.o Str.o
 all: main
 test: all

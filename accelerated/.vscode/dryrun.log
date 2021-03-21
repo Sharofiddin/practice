@@ -1,30 +1,39 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated'
 for c in chapter00 chapter01 chapter02 chapter03 chapter04 chapter05 chapter05/5-1 chapter05/5-2 chapter05/5-5 chapter06 chapter07 chapter08 chapter09  chapter09/9-5 chapter10 chapter10/10-1 chapter10/10-2 chapter10/10-4-5-6 chapter11 chapter11/11-5 chapter11/7 chapter11/8 chapter12 chapter13 chapter14 chapter15 chapter16 ; do echo "=== $c =="; (cd $c; make "CXX=g++" "CC=g++") done
+ 
 === chapter00 ==
+ 
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter00'
 g++     hello.cc   -o hello
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter00'
+ 
 === chapter01 ==
  
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter01'
 g++     frame.cc   -o frame
 g++     greet.cc   -o greet
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter01'
+ 
 === chapter02 ==
  
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter02'
 g++     frame.cc   -o frame
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter02'
+ 
 === chapter03 ==
+ 
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter03'
 g++     avg.cc   -o avg
 g++     med.cc   -o med
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter03'
+ 
 === chapter04 ==
+ 
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter04'
 g++     main1.cc   -o main1
 g++     main2.cc   -o main2
+ 
 g++    -c -o main3.o main3.cc
 g++    -c -o grade.o grade.cc
 g++    -c -o median.o median.cc
@@ -37,6 +46,7 @@ make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated
 g++ -I../chapter04   -c -o fails_vec1.o fails_vec1.cc
 g++ -I../chapter04   -c -o ext_main.o ext_main.cc
 g++ -I../chapter04   -c -o grade.o grade.cc
+ 
 g++ -I../chapter04 -c ../chapter04/median.cc
 g++ -I../chapter04 -c ../chapter04/Student_info.cc
 g++   fails_vec1.o ext_main.o grade.o median.o Student_info.o   -o fails_vec1
@@ -58,13 +68,18 @@ g++ -I../chapter04   -c -o pics_main.o pics_main.cc
 g++ -I../chapter04   -c -o pics.o pics.cc
 g++   pics_main.o pics.o   -o pics_main
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter05'
+ 
 === chapter05/5-1 ==
+ 
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter05/5-1'
 g++ test_rotate.cc util.cc ../split.cc Pharse.cc -o test_rotate
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter05/5-1'
+ 
 === chapter05/5-2 ==
+ 
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter05/5-2'
 g++    -c -o main_vec.o main_vec.cc
+ 
 g++    -c -o grade.o grade.cc
 g++ -c median.cc
 g++  -c Student_info.cc
@@ -77,16 +92,19 @@ g++    -c -o main_5_3_4.o main_5_3_4.cc
 g++   main_5_3_4.o grade.o median.o Student_info.o   -o main_5_3_4
 time ./main_5_3_4 < grades_two_in_one
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter05/5-2'
+ 
 === chapter05/5-5 ==
  
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter05/5-5'
 rm -rf *.out center_aligned
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter05/5-5'
+ 
 === chapter06 ==
  
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter06'
 g++ -I../chapter04 -I../chapter05 -c ../chapter05/split_main.cc
 g++ -I../chapter04 -I../chapter05   -c -o split.o split.cc
+ 
 g++   split_main.o split.o   -o split_main
 g++ -I../chapter04 -I../chapter05   -c -o palin.o palin.cc
 g++   palin.o   -o palin
@@ -98,23 +116,28 @@ g++ -I../chapter04 -I../chapter05   -c -o analysis.o analysis.cc
 g++ -I../chapter04 -I../chapter05   -c -o grade_check.o grade_check.cc
 g++ -I../chapter04 -I../chapter05   -c -o grade.o grade.cc
 g++ -I../chapter04 -I../chapter05 -c ../chapter04/median.cc
+ 
 g++ -I../chapter04 -I../chapter05 -c ../chapter04/Student_info.cc
 g++   grade_analysis.o analysis.o grade_check.o grade.o median.o Student_info.o   -o grade_analysis
 g++ -I../chapter04 -I../chapter05   -c -o ext_fails1.o ext_fails1.cc
 g++ -I../chapter04 -I../chapter05 -c ../chapter05/ext_main.cc
 g++   ext_fails1.o ext_main.o grade.o median.o Student_info.o   -o ext_fails1
+ 
 g++ -I../chapter04 -I../chapter05   -c -o ext_fails2.o ext_fails2.cc
 g++   ext_fails2.o ext_main.o grade.o median.o Student_info.o   -o ext_fails2
 g++ -I../chapter04 -I../chapter05   -c -o 6-5.o 6-5.cc
 g++   6-5.o analysis.o grade_check.o grade.o median.o Student_info.o   -o 6-5
 g++ -I../chapter04 -I../chapter05   -c -o test_universal_analysis.o test_universal_analysis.cc
+ 
 g++   test_universal_analysis.o analysis.o grade_check.o grade.o median.o Student_info.o   -o test_universal_analysis
 g++ -I../chapter04 -I../chapter05   -c -o ext_didnt.o ext_didnt.cc
 g++   ext_didnt.o analysis.o grade_check.o grade.o median.o Student_info.o   -o ext_didnt
+ 
 g++ -I../chapter04 -I../chapter05   -c -o ext_by_creteria.o ext_by_creteria.cc
 g++ -I../chapter04 -I../chapter05 -c ext_by_creteria_main.cc
 g++   ext_by_creteria.o ext_by_creteria_main.o grade_check.o grade.o median.o Student_info.o   -o ext_by_creteria
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter06'
+ 
 === chapter07 ==
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter07'
 g++ -I../chapter05  -I../chapter04 -I../chapter06   -c -o wc.o wc.cc
@@ -126,7 +149,9 @@ g++ -I../chapter05  -I../chapter04 -I../chapter06   -c -o grammar.o grammar.cc
 g++ -I../chapter05  -I../chapter04 -I../chapter06 -c ../chapter06/split.cc
 g++   grammar.o split.o   -o grammar
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter07'
+ 
 === chapter08 ==
+ 
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter08'
 g++ -I. -I../chapter04 -I ../chapter06   -c -o split_main.o split_main.cc
 g++   split_main.o   -o split_main
@@ -139,7 +164,6 @@ g++ -I. -I../chapter04 -I ../chapter06 -c ../chapter06/grade_analysis.cc
 g++ -I. -I../chapter04 -I ../chapter06 -c ../chapter06/grade_check.cc
 g++   analysis.o grade.o Student_info.o grade_analysis.o grade_check.o   -o analysis
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter08'
- 
 === chapter09 ==
  
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter09'
@@ -153,13 +177,10 @@ g++ -I. -I../chapter08   -c -o 9-3.o 9-3.cc
 g++   9-3.o grade.o Student_info.o   -o 9-3
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter09'
 === chapter09/9-5 ==
- 
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter09/9-5'
 g++    -c -o Student_info.o Student_info.cc
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter09/9-5'
- 
 === chapter10 ==
- 
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter10'
 g++     concat_files.cc   -o concat_files
 g++     copyfile.cc   -o copyfile
@@ -168,8 +189,10 @@ g++     pointer_example.cc   -o pointer_example
 g++     write_args.cc   -o write_args
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter10'
 === chapter10/10-1 ==
+ 
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter10/10-1'
 g++ -I. -I../../chapter08   -c -o main.o main.cc
+ 
 g++ -I. -I../../chapter08   -c -o grade.o grade.cc
 g++ -I. -I../../chapter08   -c -o Student_info.o Student_info.cc
 g++   main.o grade.o Student_info.o   -o main
@@ -179,28 +202,30 @@ make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/
  
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter10/10-2'
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter10/10-2'
-=== chapter10/10-4-5-6 ==
  
 make[1]: *** No targets specified and no makefile found.  Stop.
+ 
+=== chapter10/10-4-5-6 ==
  
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter10/10-4-5-6'
 g++ -Wall -Werror -Wextra -DDEBUG -g   -c -o test.o test.cc
 g++ -Wall -Werror -Wextra -DDEBUG -g   -c -o String_list.o String_list.cc
 g++   test.o String_list.o   -o test
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter10/10-4-5-6'
+ 
 === chapter11 ==
+ 
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter11'
 g++    -c -o urls_main.o urls_main.cc
 g++    -c -o urls.o urls.cc
 g++   urls_main.o urls.o   -o urls_main
+ 
 g++    -c -o analysis.o analysis.cc
 g++    -c -o grade.o grade.cc
 g++    -c -o Student_info.o Student_info.cc
 g++    -c -o grade_analysis.o grade_analysis.cc
 g++    -c -o grade_check.o grade_check.cc
 g++   analysis.o grade.o Student_info.o grade_analysis.o grade_check.o   -o analysis
-g++    -c -o main2.o main2.cc
-g++   main2.o   -o main2
 g++    -c -o main3.o main3.cc
 g++   main3.o grade.o Student_info.o   -o main3
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter11'
@@ -209,76 +234,93 @@ make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter11/11-5'
 g++ -I. -I../../chapter08 -DDEBUG -g   -c -o main.o main.cc
 g++ -I. -I../../chapter08 -DDEBUG -g   -c -o Student_info.o Student_info.cc
+ 
 g++ -I. -I../../chapter08 -DDEBUG -g   -c -o grade.o grade.cc
 g++   main.o Student_info.o grade.o   -o main
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter11/11-5'
+ 
 === chapter11/7 ==
+ 
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter11/7'
 g++    -c -o pics.o pics.cc
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter11/7'
+ 
 === chapter11/8 ==
+ 
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter11/8'
 g++ -I ./ -I../    main.cc List.hpp   -o main
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter11/8'
+ 
 === chapter12 ==
  
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter12'
 g++ -I. -I../chapter11   -c -o urls_main.o urls_main.cc
+ 
 g++ -I. -I../chapter11   -c -o urls.o urls.cc
 g++ -I. -I../chapter11   -c -o Str.o Str.cc
 g++   urls_main.o urls.o Str.o   -o urls_main
 g++ -I. -I../chapter11   -c -o analysis.o analysis.cc
 g++ -I. -I../chapter11   -c -o grade.o grade.cc
+ 
 g++ -I. -I../chapter11   -c -o Student_info.o Student_info.cc
+ 
 g++ -I. -I../chapter11   -c -o grade_analysis.o grade_analysis.cc
+ 
 g++ -I. -I../chapter11   -c -o grade_check.o grade_check.cc
 g++   analysis.o grade.o Student_info.o grade_analysis.o grade_check.o Str.o   -o analysis
+ 
 g++ -I. -I../chapter11   -c -o main2.o main2.cc
 g++   main2.o Str.o   -o main2
 g++ -I. -I../chapter11   -c -o main3.o main3.cc
+ 
 g++   main3.o grade.o Student_info.o Str.o   -o main3
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter12'
+ 
 === chapter13 ==
  
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter13'
 g++ -I. -I../chapter08   -c -o main_core.o main_core.cc
-g++ -I. -I../chapter08   -c -o grade.o grade.cc
-g++ -I. -I../chapter08   -c -o read_hw.o read_hw.cc
-g++ -I. -I../chapter08   -c -o Core.o Core.cc
 g++   main_core.o grade.o read_hw.o Core.o   -o main_core
 g++ -I. -I../chapter08   -c -o main_grad.o main_grad.cc
 g++   main_grad.o grade.o read_hw.o Core.o   -o main_grad
 g++ -I. -I../chapter08   -c -o main_orig.o main_orig.cc
-g++ -I. -I../chapter08   -c -o Student_info.o Student_info.cc
 g++   main_orig.o grade.o Student_info.o read_hw.o Core.o   -o main_orig
 g++ -I. -I../chapter08   -c -o main_core_ptrs.o main_core_ptrs.cc
 g++   main_core_ptrs.o grade.o read_hw.o Core.o   -o main_core_ptrs
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter13'
- 
 === chapter14 ==
  
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter14'
 g++ -I. -I../chapter08   -c -o std_main1.o std_main1.cc
+ 
 g++ -I. -I../chapter08   -c -o Student_info.o Student_info.cc
+ 
 g++ -I. -I../chapter08   -c -o Core.o Core.cc
 g++ -I. -I../chapter08   -c -o grade.o grade.cc
 g++ -I. -I../chapter08   -c -o read_hw.o read_hw.cc
 g++   std_main1.o Student_info.o Core.o grade.o read_hw.o   -o std_main1
+ 
 g++ -I. -I../chapter08   -c -o std_main2.o std_main2.cc
 g++   std_main2.o Student_info.o Core.o grade.o read_hw.o   -o std_main2
 g++ -I. -I../chapter08   -c -o std_main3.o std_main3.cc
 g++   std_main3.o Student_info.o Core.o grade.o read_hw.o   -o std_main3
+ 
 g++ -I. -I../chapter08   -c -o urls_main.o urls_main.cc
+ 
 g++ -I. -I../chapter08   -c -o urls.o urls.cc
 g++ -I. -I../chapter08   -c -o Vec_clone.o Vec_clone.cc
 g++ -I. -I../chapter08   -c -o Str.o Str.cc
 g++   urls_main.o urls.o Vec_clone.o Str.o   -o urls_main
+ 
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter14'
+ 
 === chapter15 ==
+ 
 make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter15'
 g++ -I. -I../chapter14   -c -o main1.o main1.cc
 g++ -I. -I../chapter14   -c -o Pic.o Pic.cc
 g++   main1.o Pic.o   -o main1
+ 
 g++ -I. -I../chapter14   -c -o main2.o main2.cc
 g++   main2.o Pic.o   -o main2
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter15'
@@ -290,9 +332,9 @@ g++  -c Pic.cc
 g++  -c Core.cc
 g++  -c Student_info.cc
 g++  -c read_hw.cc
+ 
 g++  -c grade.cc
 g++   histo.o Pic.o Core.o Student_info.o read_hw.o grade.o   -o histo
 make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter16'
- 
 make: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated'
  

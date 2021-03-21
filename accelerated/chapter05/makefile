@@ -48,7 +48,7 @@ pics_main.o:	pics_main.cc pics.h
 
 5_8_main:	5-8-main.o 5-8.o
 
-pics_main:	pics_main.o pics.o
+pics_main: pics_main.o pics.o
 
 split.o:	split.cc split.h
 

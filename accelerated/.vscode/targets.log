@@ -1,6 +1,8 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 for c in chapter00 chapter01 chapter02 chapter03 chapter04 chapter05 chapter05/5-1 chapter05/5-2 chapter05/5-5 chapter06 chapter07 chapter08 chapter09  chapter09/9-5 chapter10 chapter10/10-1 chapter10/10-2 chapter10/10-4-5-6 chapter11 chapter11/11-5 chapter11/7 chapter11/8 chapter12 chapter13 chapter14 chapter15 chapter16 ; do echo "=== $c =="; (cd $c; make "CXX=g++" "CC=g++") done
+ 
 === chapter00 ==
+ 
 # make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter00'
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
@@ -9,11 +11,14 @@ for c in chapter00 chapter01 chapter02 chapter03 chapter04 chapter05 chapter05/5
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
 # automatic
+ 
+make[1]: *** No rule to make target 'hello', needed by 'all'.  Stop.
+ 
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
@@ -80,13 +85,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -106,7 +111,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -124,7 +129,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -164,7 +169,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -184,7 +189,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -196,7 +201,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -250,7 +255,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=17/148=11%
 
@@ -285,9 +290,6 @@ test: all
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
- 
-make[1]: *** No rule to make target 'hello', needed by 'all'.  Stop.
- 
 #  Last modified 2021-01-20 23:51:57.002669462
 #  File has been updated.
 #  Successfully updated.
@@ -295,6 +297,7 @@ make[1]: *** No rule to make target 'hello', needed by 'all'.  Stop.
 # Not a target:
 hello:
 #  Implicit rule search has been done.
+ 
 #  File does not exist.
 #  File has not been updated.
 
@@ -325,7 +328,7 @@ clobber:
 # strcache performance: lookups = 19 / hit rate = 36%
 # hash-table stats:
 # Load=12/8192=0%, Rehash=0, Collisions=1/19=5%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
 # make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter00'
 === chapter01 ==
@@ -337,8 +340,9 @@ clobber:
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -409,13 +413,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -435,7 +439,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -453,7 +457,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -481,6 +485,9 @@ GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
+ 
+make[1]: *** No rule to make target 'frame', needed by 'all'.  Stop.
+ 
 XDG_VTNR = 7
 # environment
 LC_TIME = en_US.UTF-8
@@ -493,7 +500,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -513,7 +520,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -525,7 +532,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -579,7 +586,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=17/148=11%
 
@@ -616,9 +623,6 @@ test: all
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 7):
 	./greet <../data/name1
- 
-make[1]: *** No rule to make target 'frame', needed by 'all'.  Stop.
- 
 	./frame <../data/name2
 
 # Not a target:
@@ -661,9 +665,10 @@ greet:
 # strcache performance: lookups = 21 / hit rate = 33%
 # hash-table stats:
 # Load=14/8192=0%, Rehash=0, Collisions=1/21=5%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
 # make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter01'
+ 
 === chapter02 ==
  
 # make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter02'
@@ -677,7 +682,7 @@ greet:
 make[1]: *** No rule to make target 'frame', needed by 'all'.  Stop.
  
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -748,13 +753,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -774,7 +779,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -792,13 +797,12 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
 GTK_MODULES = gail:atk-bridge
 # environment
- 
 VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
 # environment
 HOME = /home/sharofiddin
@@ -833,7 +837,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -853,7 +857,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -865,7 +869,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -919,7 +923,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=17/148=11%
 
@@ -991,11 +995,12 @@ clobber:
 # strcache performance: lookups = 19 / hit rate = 36%
 # hash-table stats:
 # Load=12/8192=0%, Rehash=0, Collisions=1/19=5%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
-# make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter02'
  
+# make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter02'
 === chapter03 ==
+ 
 # make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter03'
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
@@ -1004,7 +1009,7 @@ clobber:
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -1016,6 +1021,9 @@ clobber:
 PAPERSIZE = a4
 # environment
 DESKTOP_SESSION = cinnamon2d
+ 
+make[1]: *** No rule to make target 'avg', needed by 'all'.  Stop.
+ 
 # default
 .SHELLFLAGS := -c
 # environment
@@ -1075,13 +1083,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -1101,7 +1109,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -1119,7 +1127,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -1159,7 +1167,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -1179,7 +1187,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -1191,7 +1199,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -1245,7 +1253,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=17/148=11%
 
@@ -1280,9 +1288,6 @@ test: all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
-make[1]: *** No rule to make target 'avg', needed by 'all'.  Stop.
- 
 #  recipe to execute (from 'makefile', line 7):
 	./avg <../data/single_grade
 	./med <../data/single_grade
@@ -1318,6 +1323,7 @@ avg:
 # Load=8/1024=1%, Rehash=0, Collisions=0/22=0%
 # VPATH Search Paths
 
+ 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
@@ -1328,10 +1334,12 @@ avg:
 # strcache performance: lookups = 26 / hit rate = 26%
 # hash-table stats:
 # Load=19/8192=0%, Rehash=0, Collisions=1/26=4%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
 # make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter03'
+ 
 === chapter04 ==
+ 
 # make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter04'
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
@@ -1340,11 +1348,14 @@ avg:
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
 # automatic
+ 
+make[1]: *** No rule to make target 'main1', needed by 'all'.  Stop.
+ 
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
@@ -1411,13 +1422,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -1437,7 +1448,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -1455,7 +1466,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -1495,7 +1506,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -1515,7 +1526,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -1527,7 +1538,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -1570,7 +1581,6 @@ SUFFIXES :=
 LIBGL_ALWAYS_SOFTWARE = 1
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
- 
 # environment
 LC_IDENTIFICATION = en_US.UTF-8
 # default
@@ -1582,7 +1592,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=17/148=11%
 
@@ -1642,6 +1652,7 @@ test: all
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2021-01-20 23:51:57.057669761
 #  File has been updated.
 #  Successfully updated.
@@ -1730,18 +1741,21 @@ main1:
 # strcache performance: lookups = 55 / hit rate = 52%
 # hash-table stats:
 # Load=26/8192=0%, Rehash=0, Collisions=1/55=2%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
 # make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter04'
+ 
 === chapter05 ==
+ 
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -1814,13 +1828,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -1840,7 +1854,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -1854,14 +1868,11 @@ PWD = /home/sharofiddin/practice/c++/practice/accelerated/chapter05
 # environment
 QT_QPA_PLATFORMTHEME = qt5ct
 # default
- 
-make[1]: *** No rule to make target 'main1', needed by 'all'.  Stop.
- 
 .LOADED := 
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -1901,7 +1912,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -1921,7 +1932,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -1933,7 +1944,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -1971,6 +1982,7 @@ GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
 CLUTTER_DEFAULT_FPS = 15
 # default
+ 
 SUFFIXES := 
 # environment
 LIBGL_ALWAYS_SOFTWARE = 1
@@ -1987,7 +1999,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=120/1024=12%, Rehash=0, Collisions=17/154=11%
 
@@ -2122,6 +2134,7 @@ median.o: ../chapter04/median.cc ../chapter04/median.h
 # automatic
 # @ := median.o
 # automatic
+ 
 # % := 
 # automatic
 # * := 
@@ -2147,7 +2160,6 @@ test: all
 #  recipe to execute (from 'makefile', line 64):
 	./fails_vec1 <../data/grades
 	./fails_vec2 <../data/grades_my
- 
 	./fails_iters <../data/grades
 	./fails_list <../data/grades
 	./split_main < split_main.cc
@@ -2157,7 +2169,7 @@ test: all
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-01-20 23:51:57.063669794
+#  Last modified 2021-03-11 01:43:01.57209287
 #  File has been updated.
 #  Successfully updated.
 
@@ -2218,6 +2230,7 @@ list_main.o: list_main.cc grade.h ../chapter04/Student_info.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 fails_vec2.o: fails_vec2.cc grade.h ../chapter04/Student_info.h
 #  Implicit rule search has not been done.
@@ -2280,6 +2293,7 @@ split_main: split_main.o split.o
 
 split_main.o: split_main.cc split.h
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -2326,6 +2340,7 @@ fails_iters.cc:
 
 # Not a target:
 ../chapter04/median.h:
+ 
 #  Implicit rule search has been done.
 #  Last modified 2021-01-20 23:51:57.057669761
 #  File has been updated.
@@ -2385,6 +2400,7 @@ split.cc:
 # Not a target:
 ../chapter04/Student_info.h:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2021-01-20 23:51:57.004669473
 #  File has been updated.
 #  Successfully updated.
@@ -2403,17 +2419,20 @@ split.cc:
 # strcache performance: lookups = 191 / hit rate = 60%
 # hash-table stats:
 # Load=75/8192=1%, Rehash=0, Collisions=1/191=1%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter05/5-1 ==
+ 
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -2463,6 +2482,7 @@ GTK_OVERLAY_SCROLLING = 1
 MAKEFILE_LIST :=  makefile
 # automatic
 @F = $(notdir $@)
+ 
 # environment
 GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # 'override' directive
@@ -2476,7 +2496,6 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
- 
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
 LC_NAME = en_US.UTF-8
@@ -2485,13 +2504,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -2511,7 +2530,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -2529,7 +2548,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -2569,7 +2588,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -2581,6 +2600,7 @@ LC_MONETARY = en_US.UTF-8
 # environment
 XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
+ 
 CHROME_DESKTOP = code-url-handler.desktop
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
@@ -2589,7 +2609,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -2601,7 +2621,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -2655,7 +2675,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=17/149=11%
 
@@ -2688,6 +2708,7 @@ makefile:
 #  File has been updated.
 #  Successfully updated.
 
+ 
 clobber:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -2756,19 +2777,20 @@ main:
 # strcache performance: lookups = 26 / hit rate = 30%
 # hash-table stats:
 # Load=18/8192=0%, Rehash=0, Collisions=1/26=4%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
- 
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter05/5-2 ==
  
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -2839,13 +2861,14 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
+ 
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -2865,7 +2888,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -2883,7 +2906,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -2899,6 +2922,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = sharofiddin
 # environment
+ 
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 +F = $(notdir $+)
@@ -2923,7 +2947,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -2940,10 +2964,11 @@ CHROME_DESKTOP = code-url-handler.desktop
 %D = $(patsubst %/,%,$(dir $%))
 # environment
 LC_TELEPHONE = en_US.UTF-8
+ 
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -2955,7 +2980,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -2993,6 +3018,7 @@ GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
 CLUTTER_DEFAULT_FPS = 15
 # default
+ 
 SUFFIXES := 
 # environment
 LIBGL_ALWAYS_SOFTWARE = 1
@@ -3009,7 +3035,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=17/152=11%
 
@@ -3034,6 +3060,7 @@ main_5_3_4.o: main_5_3_4.cc grade.h Student_info.h median.h
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 Student_info.o: Student_info.cc Student_info.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -3043,7 +3070,6 @@ Student_info.o: Student_info.cc Student_info.h
 
 all: main_vec main_list main_two_in_one
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -3094,6 +3120,7 @@ median.o: median.cc median.h
 # automatic
 # + := median.cc median.h
 # automatic
+ 
 # | := 
 # automatic
 # < := median.cc
@@ -3132,6 +3159,7 @@ grade.o: grade.cc grade.h
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
+ 
 #  Successfully updated.
 
 clobber:
@@ -3175,6 +3203,7 @@ main_list.cc:
 Student_info.h:
 #  Implicit rule search has been done.
 #  Last modified 2021-01-20 23:51:57.060669778
+ 
 #  File has been updated.
 #  Successfully updated.
 
@@ -3215,6 +3244,7 @@ median.h:
 #  Successfully updated.
 
 # Not a target:
+ 
 grade.h:
 #  Implicit rule search has been done.
 #  Last modified 2021-01-20 23:51:57.061669783
@@ -3247,18 +3277,20 @@ main_5_3_4: main_5_3_4.o grade.o median.o Student_info.o
 # strcache performance: lookups = 89 / hit rate = 64%
 # hash-table stats:
 # Load=32/8192=0%, Rehash=0, Collisions=1/89=1%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter05/5-5 ==
  
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -3329,13 +3361,14 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
+ 
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -3355,7 +3388,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -3373,7 +3406,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -3406,6 +3439,7 @@ XDG_VTNR = 7
 LC_TIME = en_US.UTF-8
 # default
 MAKE = $(MAKE_COMMAND)
+ 
 # environment
 SHLVL = 1
 # command line
@@ -3413,7 +3447,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -3433,7 +3467,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -3445,7 +3479,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -3462,6 +3496,7 @@ LC_PAPER = en_US.UTF-8
 CINNAMON_VERSION = 4.8.6
 # environment
 QT_ACCESSIBILITY = 1
+ 
 # default
 MAKEFILES := 
 # environment
@@ -3499,7 +3534,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=17/149=11%
 
@@ -3512,6 +3547,7 @@ VSCODE_PID = 2387
 # . (device 66306, inode 19662088): 4 files, no impossibilities.
 
 # 4 files, no impossibilities in 1 directories.
+ 
 
 # Implicit Rules
 
@@ -3535,7 +3571,6 @@ makefile:
 clobber:
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: ''
- 
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
@@ -3556,6 +3591,7 @@ clobber:
 # automatic
 # ? := 
 # variable set hash-table stats:
+ 
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
 #  recipe to execute (from 'makefile', line 2):
 	rm -rf *.out center_aligned
@@ -3580,18 +3616,20 @@ clobber:
 # strcache performance: lookups = 14 / hit rate = 35%
 # hash-table stats:
 # Load=9/8192=0%, Rehash=0, Collisions=1/14=7%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter06 ==
  
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -3664,16 +3702,17 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
+ 
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 VSCODE_LOG_STACK = false
@@ -3690,7 +3729,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -3708,7 +3747,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -3726,6 +3765,7 @@ LOGNAME = sharofiddin
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
+ 
 +F = $(notdir $+)
 # environment
 CINNAMON_SLOWDOWN_FACTOR = 0.0001
@@ -3748,7 +3788,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -3768,7 +3808,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -3780,9 +3820,10 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
+ 
 # environment
 MFLAGS = -pqrRw
 # automatic
@@ -3834,7 +3875,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=120/1024=12%, Rehash=0, Collisions=17/154=11%
 
@@ -3876,7 +3917,6 @@ grade_analysis: grade_analysis.o analysis.o grade_check.o grade.o median.o Stude
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 # Not a target:
 ext_fails1.cc:
 #  Implicit rule search has not been done.
@@ -4158,11 +4198,11 @@ split_main.o: ../chapter05/split_main.cc ../chapter05/split.h
 # automatic
 # * := 
 # automatic
+ 
 # + := ../chapter05/split_main.cc ../chapter05/split.h
 # automatic
 # | := 
 # automatic
- 
 # < := ../chapter05/split_main.cc
 # automatic
 # ^ := ../chapter05/split_main.cc ../chapter05/split.h
@@ -4331,16 +4371,17 @@ split.cc:
 
 # No general ('VPATH' variable) search path.
 
+ 
 # strcache buffers: 1 (0) / strings = 83 / storage = 1058 B / avg = 12 B
 # current buf: size = 8162 B / used = 1058 B / count = 83 / avg = 12 B
 
 # strcache performance: lookups = 234 / hit rate = 64%
 # hash-table stats:
 # Load=83/8192=1%, Rehash=0, Collisions=5/234=2%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
-=== chapter07 ==
  
+=== chapter07 ==
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -4348,7 +4389,7 @@ split.cc:
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -4421,13 +4462,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -4447,7 +4488,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -4465,7 +4506,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -4505,7 +4546,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -4525,7 +4566,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -4537,7 +4578,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -4591,7 +4632,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=120/1024=12%, Rehash=0, Collisions=17/154=11%
 
@@ -4623,7 +4664,6 @@ test_grammar_list: grammar_list
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 42):
 		./grammar_list <../data/grammar_input
- 
 
 wc.o: wc.cc
 #  Implicit rule search has been done.
@@ -4633,6 +4673,7 @@ wc.o: wc.cc
 
 Student_info.o: ../chapter04/Student_info.cc ../chapter04/Student_info.h
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 8):
@@ -4885,18 +4926,21 @@ grammar_list: grammar_list.o split.o
 # strcache performance: lookups = 91 / hit rate = 52%
 # hash-table stats:
 # Load=43/8192=1%, Rehash=0, Collisions=1/91=1%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter08 ==
  
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -4969,13 +5013,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -4993,9 +5037,10 @@ LS_COLORS =
 # environment
 XDG_SESSION_DESKTOP = cinnamon2d
 # environment
+ 
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -5013,7 +5058,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -5053,7 +5098,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -5070,10 +5115,11 @@ CHROME_DESKTOP = code-url-handler.desktop
 %D = $(patsubst %/,%,$(dir $%))
 # environment
 LC_TELEPHONE = en_US.UTF-8
+ 
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -5085,7 +5131,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -5112,6 +5158,7 @@ LC_NUMERIC = en_US.UTF-8
 ELECTRON_RUN_AS_NODE = 1
 # command line
 CXX = g++
+ 
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
@@ -5139,7 +5186,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=120/1024=12%, Rehash=0, Collisions=17/154=11%
 
@@ -5152,6 +5199,7 @@ VSCODE_PID = 2387
 # . (device 66306, inode 19662165): 17 files, no impossibilities.
 
 # 17 files, no impossibilities in 1 directories.
+ 
 
 # Implicit Rules
 
@@ -5173,9 +5221,9 @@ grade_analysis.o: ../chapter06/grade_analysis.cc ../chapter06/analysis.h
 #  recipe to execute (from 'makefile', line 37):
 	$(CXX) $(CXXFLAGS) -c ../chapter06/grade_analysis.cc
 
- 
 Student_info.o: ../chapter04/Student_info.cc ../chapter04/Student_info.h
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 8):
@@ -5220,6 +5268,7 @@ all: split_main main3 analysis
 ../chapter06/grade_check.cc:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 # Not a target:
@@ -5281,6 +5330,7 @@ clobber:
 #  recipe to execute (from 'makefile', line 52):
 	rm -f *.o *.exe *.out core split_main main3 analysis 8-2_test stl_algs stl_algs_test 8-8 8-3 8-2
 
+ 
 8-3:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -5301,6 +5351,7 @@ clobber:
 #  File has been updated.
 #  Successfully updated.
 
+ 
 split_main: split_main.o
 #  Implicit rule search has been done.
 #  File does not exist.
@@ -5314,6 +5365,7 @@ split_main.o: split_main.cc ../chapter05/split.h
 #  Successfully updated.
 
 analysis.o: ../chapter06/analysis.cc ../chapter06/analysis.h
+ 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -5354,6 +5406,7 @@ main3: main3.o grade.o analysis.o Student_info.o
 main3.o: ../chapter04/main3.cc ../chapter06/grade.h
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: ''
+ 
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
@@ -5384,6 +5437,7 @@ split_main.cc:
 #  Last modified 2021-01-20 23:51:57.153670284
 #  File has been updated.
 #  Successfully updated.
+ 
 
 # Not a target:
 8-2.h:
@@ -5423,6 +5477,7 @@ grade_check.o: ../chapter06/grade_check.cc
 #  File has not been updated.
 
 # files hash-table stats:
+ 
 # Load=37/1024=4%, Rehash=0, Collisions=0/90=0%
 # VPATH Search Paths
 
@@ -5436,18 +5491,20 @@ grade_check.o: ../chapter06/grade_check.cc
 # strcache performance: lookups = 98 / hit rate = 48%
 # hash-table stats:
 # Load=50/8192=1%, Rehash=0, Collisions=1/98=1%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter09 ==
  
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -5520,13 +5577,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -5546,7 +5603,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -5564,7 +5621,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -5604,7 +5661,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -5624,7 +5681,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -5636,7 +5693,8 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+ 
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -5690,7 +5748,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=120/1024=12%, Rehash=0, Collisions=17/149=11%
 
@@ -5731,7 +5789,6 @@ all: grading_prog 9-4 9-3
 
 # Not a target:
 Student_info.cc:
- 
 #  Implicit rule search has been done.
 #  Last modified 2021-01-20 23:51:57.215670622
 #  File has been updated.
@@ -5749,6 +5806,7 @@ test: all
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2021-01-20 23:51:57.215670622
 #  File has been updated.
 #  Successfully updated.
@@ -5840,6 +5898,7 @@ Student_info.h:
 grade.h:
 #  Implicit rule search has been done.
 #  Last modified 2021-01-20 23:51:57.215670622
+ 
 #  File has been updated.
 #  Successfully updated.
 
@@ -5864,18 +5923,20 @@ grade.h:
 # strcache performance: lookups = 74 / hit rate = 58%
 # hash-table stats:
 # Load=31/8192=0%, Rehash=0, Collisions=1/74=1%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter09/9-5 ==
  
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -5946,13 +6007,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -5972,7 +6033,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -5990,7 +6051,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -6030,7 +6091,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -6050,7 +6111,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -6062,7 +6123,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -6116,7 +6177,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=17/148=11%
 
@@ -6151,7 +6212,6 @@ Student_info.cc:
 
 test: main
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 9):
@@ -6199,6 +6259,7 @@ main.cc:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
 # files hash-table stats:
 # Load=11/1024=1%, Rehash=0, Collisions=0/29=0%
@@ -6214,8 +6275,9 @@ main.cc:
 # strcache performance: lookups = 31 / hit rate = 48%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=1/31=3%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter10 ==
  
 # make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter10'
@@ -6223,10 +6285,11 @@ main.cc:
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+ 
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -6275,6 +6338,9 @@ GTK_OVERLAY_SCROLLING = 1
 # makefile (from 'makefile', line 1)
 MAKEFILE_LIST :=  makefile
 # automatic
+ 
+make[1]: *** No rule to make target 'concat_files', needed by 'all'.  Stop.
+ 
 @F = $(notdir $@)
 # environment
 GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
@@ -6297,13 +6363,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -6315,6 +6381,7 @@ VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
+ 
 XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/sharofiddin
 # environment
 LS_COLORS = 
@@ -6323,7 +6390,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -6341,7 +6408,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -6381,7 +6448,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -6401,8 +6468,9 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
+ 
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
 .VARIABLES := 
@@ -6413,7 +6481,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -6423,9 +6491,6 @@ MFLAGS = -pqrRw
 # environment
 BREAKPAD_DUMP_LOCATION = /home/sharofiddin/.config/Code/exthost Crash Reports
 # automatic
- 
-make[1]: *** No rule to make target 'concat_files', needed by 'all'.  Stop.
- 
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 LC_PAPER = en_US.UTF-8
@@ -6465,12 +6530,13 @@ LC_IDENTIFICATION = en_US.UTF-8
 .RECIPEPREFIX := 
 # environment
 LC_ADDRESS = en_US.UTF-8
+ 
 # environment
 CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=17/148=11%
 
@@ -6487,6 +6553,7 @@ VSCODE_PID = 2387
 # Implicit Rules
 
 # No implicit rules.
+ 
 
 # Files
 
@@ -6523,6 +6590,7 @@ test: all
 	./pointer_example
 	./write_args this is a test
 
+ 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
@@ -6543,6 +6611,7 @@ write_args:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 # Not a target:
 .DEFAULT:
 #  Implicit rule search has not been done.
@@ -6568,42 +6637,66 @@ concat_files:
 
 # strcache performance: lookups = 31 / hit rate = 22%
 # hash-table stats:
+ 
 # Load=24/8192=0%, Rehash=0, Collisions=1/31=3%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
 # make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter10'
  
 === chapter10/10-1 ==
  
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
+ 
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
+ 
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+ 
 # This is free software: you are free to change and redistribute it.
+ 
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+ 
+# Make data base, printed on Sun Mar 21 14:02:25 2021
+ 
 
 # Variables
+ 
 
+ 
 # automatic
+ 
 <D = $(patsubst %/,%,$(dir $<))
+ 
 # automatic
+ 
 ?F = $(notdir $?)
+ 
 # environment
+ 
 PAPERSIZE = a4
+ 
 # environment
+ 
 DESKTOP_SESSION = cinnamon2d
+ 
 # default
+ 
 .SHELLFLAGS := -c
+ 
 # environment
+ 
 XDG_SESSION_CLASS = user
+ 
 # environment
 XDG_SESSION_TYPE = x11
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
 GTK3_MODULES = xapp-gtk3-module
+ 
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -6655,13 +6748,14 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
+ 
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -6681,7 +6775,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -6699,7 +6793,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -6718,6 +6812,7 @@ LOGNAME = sharofiddin
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 +F = $(notdir $+)
+ 
 # environment
 CINNAMON_SLOWDOWN_FACTOR = 0.0001
 # environment
@@ -6739,7 +6834,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -6757,9 +6852,10 @@ CHROME_DESKTOP = code-url-handler.desktop
 # environment
 LC_TELEPHONE = en_US.UTF-8
 # default
+ 
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -6771,7 +6867,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -6790,6 +6886,7 @@ CINNAMON_VERSION = 4.8.6
 QT_ACCESSIBILITY = 1
 # default
 MAKEFILES := 
+ 
 # environment
 LC_NUMERIC = en_US.UTF-8
 # automatic
@@ -6825,8 +6922,9 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
+ 
 # Load=120/1024=12%, Rehash=0, Collisions=17/149=11%
 
 # Pattern-specific Variable Values
@@ -6851,6 +6949,7 @@ Student_info.o: Student_info.cc Student_info.h
 #  File has been updated.
 #  Successfully updated.
 
+ 
 # Not a target:
 ../../chapter08/median.h:
 #  Implicit rule search has been done.
@@ -6862,7 +6961,6 @@ all: main
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
- 
 #  Successfully updated.
 
 # Not a target:
@@ -6875,6 +6973,7 @@ Student_info.cc:
 test: all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 16):
 	./main <../../data/grades
@@ -6906,6 +7005,7 @@ grade.cc:
 #  File has been updated.
 #  Successfully updated.
 
+ 
 # Not a target:
 Student_info.h:
 #  Implicit rule search has been done.
@@ -6959,8 +7059,9 @@ main.cc:
 # strcache performance: lookups = 43 / hit rate = 53%
 # hash-table stats:
 # Load=20/8192=0%, Rehash=0, Collisions=1/43=2%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter10/10-2 ==
  
 # make[1]: Entering directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter10/10-2'
@@ -6970,8 +7071,11 @@ main.cc:
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
+make[1]: *** No targets specified and no makefile found.  Stop.
+ 
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -7042,13 +7146,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -7068,7 +7172,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -7086,7 +7190,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -7126,7 +7230,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -7146,7 +7250,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -7158,7 +7262,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -7212,7 +7316,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=17/143=12%
 
@@ -7270,14 +7374,13 @@ GNUmakefile:
 # strcache buffers: 1 (0) / strings = 11 / storage = 103 B / avg = 9 B
 # current buf: size = 8162 B / used = 103 B / count = 11 / avg = 9 B
 
+ 
 # strcache performance: lookups = 13 / hit rate = 15%
 # hash-table stats:
 # Load=11/8192=0%, Rehash=0, Collisions=1/13=8%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
 # make[1]: Leaving directory '/home/sharofiddin/practice/c++/practice/accelerated/chapter10/10-2'
- 
-make[1]: *** No targets specified and no makefile found.  Stop.
  
 === chapter10/10-4-5-6 ==
  
@@ -7285,10 +7388,11 @@ make[1]: *** No targets specified and no makefile found.  Stop.
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+ 
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -7361,13 +7465,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -7389,14 +7493,13 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
 %F = $(notdir $%)
 # environment
 DISPLAY = :0
- 
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -7408,7 +7511,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -7448,7 +7551,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -7468,7 +7571,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -7480,12 +7583,11 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
 MFLAGS = -pqrRw
- 
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -7535,7 +7637,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=121/1024=12%, Rehash=0, Collisions=19/152=12%
 
@@ -7568,6 +7670,7 @@ Makefile:
 #  File has been updated.
 #  Successfully updated.
 
+ 
 # makefile (from 'Makefile', line 5)
 debug: CXXFLAGS += -DDEBUG -g
 # makefile (from 'Makefile', line 6)
@@ -7640,18 +7743,20 @@ String_list.hpp:
 # strcache performance: lookups = 34 / hit rate = 52%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=1/34=3%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter11 ==
  
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -7722,13 +7827,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -7748,7 +7853,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -7758,6 +7863,7 @@ DISPLAY = :0
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
+ 
 PWD = /home/sharofiddin/practice/c++/practice/accelerated/chapter11
 # environment
 QT_QPA_PLATFORMTHEME = qt5ct
@@ -7766,7 +7872,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -7806,7 +7912,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -7826,7 +7932,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -7838,7 +7944,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -7892,7 +7998,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=17/148=11%
 
@@ -7902,9 +8008,9 @@ VSCODE_PID = 2387
 
 # Directories
 
-# . (device 66306, inode 19662234): 23 files, no impossibilities.
+# . (device 66306, inode 19662234): 25 files, no impossibilities.
 
-# 23 files, no impossibilities in 1 directories.
+# 25 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -7934,11 +8040,10 @@ Student_info.o: Student_info.cc Vec.h Student_info.h
 # Not a target:
 Vec.h:
 #  Implicit rule search has been done.
-#  Last modified 2021-02-26 18:56:59.608120286
+#  Last modified 2021-03-13 15:04:48.221162359
 #  File has been updated.
 #  Successfully updated.
 
- 
 # Not a target:
 analysis.h:
 #  Implicit rule search has been done.
@@ -7973,7 +8078,7 @@ grade_analysis.cc:
 
 main2: main2.o
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2021-03-13 00:28:51.056690825
 #  File has been updated.
 #  Successfully updated.
 
@@ -7993,7 +8098,7 @@ urls_main.cc:
 
 main2.o: main2.cc
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2021-03-13 00:28:50.971688286
 #  File has been updated.
 #  Successfully updated.
 
@@ -8041,6 +8146,7 @@ urls.o: urls.cc urls.h Vec.h
 #  File has been updated.
 #  Successfully updated.
 
+ 
 # Not a target:
 grade.cc:
 #  Implicit rule search has been done.
@@ -8144,21 +8250,23 @@ grade_check.o: grade_check.cc
 # strcache buffers: 1 (0) / strings = 43 / storage = 408 B / avg = 9 B
 # current buf: size = 8162 B / used = 408 B / count = 43 / avg = 9 B
 
-# strcache performance: lookups = 103 / hit rate = 58%
+# strcache performance: lookups = 105 / hit rate = 59%
 # hash-table stats:
-# Load=43/8192=1%, Rehash=0, Collisions=1/103=1%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Load=43/8192=1%, Rehash=0, Collisions=1/105=1%
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter11/11-5 ==
  
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -8231,13 +8339,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -8257,7 +8365,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -8275,7 +8383,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -8304,7 +8412,6 @@ GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XDG_VTNR = 7
- 
 # environment
 LC_TIME = en_US.UTF-8
 # default
@@ -8316,7 +8423,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -8336,7 +8443,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -8348,7 +8455,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -8402,7 +8509,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=120/1024=12%, Rehash=0, Collisions=18/151=12%
 
@@ -8541,18 +8648,20 @@ main.cc:
 # strcache performance: lookups = 48 / hit rate = 56%
 # hash-table stats:
 # Load=21/8192=0%, Rehash=0, Collisions=1/48=2%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter11/7 ==
  
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -8586,6 +8695,7 @@ GDMSESSION = cinnamon2d
 MAKE_VERSION := 4.2.1
 # makefile
 CURDIR := /home/sharofiddin/practice/c++/practice/accelerated/chapter11/7
+ 
 # makefile
 SHELL = /bin/sh
 # environment
@@ -8623,13 +8733,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -8649,7 +8759,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -8658,6 +8768,7 @@ MUFFIN_NO_SHADOWS = 1
 DISPLAY = :0
 # environment
 VSCODE_PIPE_LOGGING = true
+ 
 # environment
 PWD = /home/sharofiddin/practice/c++/practice/accelerated/chapter11/7
 # environment
@@ -8667,7 +8778,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -8707,7 +8818,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -8727,7 +8838,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -8735,11 +8846,12 @@ OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # automatic
 *F = $(notdir $*)
 # environment
+ 
 LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -8784,6 +8896,7 @@ LIBGL_ALWAYS_SOFTWARE = 1
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
 LC_IDENTIFICATION = en_US.UTF-8
+ 
 # default
 .RECIPEPREFIX := 
 # environment
@@ -8793,7 +8906,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=17/148=11%
 
@@ -8816,15 +8929,15 @@ VSCODE_PID = 2387
 # Not a target:
 ../Vec.h:
 #  Implicit rule search has been done.
-#  Last modified 2021-02-26 18:56:59.608120286
+#  Last modified 2021-03-13 15:04:48.221162359
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
+ 
 pics.h:
 #  Implicit rule search has been done.
 #  Last modified 2021-02-13 09:22:37.01791333
- 
 #  File has been updated.
 #  Successfully updated.
 
@@ -8860,6 +8973,7 @@ pics_main.o: pics_main.cc pics.h
 #  File has not been updated.
 
 # Not a target:
+ 
 pics_main.cc:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -8897,18 +9011,22 @@ pics.cc:
 
 # strcache performance: lookups = 31 / hit rate = 48%
 # hash-table stats:
+ 
 # Load=16/8192=0%, Rehash=0, Collisions=1/31=3%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter11/8 ==
+ 
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -8976,18 +9094,19 @@ VSCODE_VERBOSE_LOGGING = true
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
 LC_NAME = en_US.UTF-8
+ 
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -9007,7 +9126,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -9025,7 +9144,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -9041,6 +9160,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = sharofiddin
 # environment
+ 
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 +F = $(notdir $+)
@@ -9065,7 +9185,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -9085,7 +9205,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -9097,7 +9217,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -9118,6 +9238,7 @@ QT_ACCESSIBILITY = 1
 MAKEFILES := 
 # environment
 LC_NUMERIC = en_US.UTF-8
+ 
 # automatic
 <F = $(notdir $<)
 # environment
@@ -9130,7 +9251,6 @@ LC_MEASUREMENT = en_US.UTF-8
 CINNAMON_2D = 1
 # environment
 GJS_DEBUG_TOPICS = JS ERROR;JS LOG
- 
 # automatic
 ^F = $(notdir $^)
 # environment
@@ -9152,7 +9272,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=120/1024=12%, Rehash=0, Collisions=17/149=11%
 
@@ -9171,6 +9291,7 @@ VSCODE_PID = 2387
 # No implicit rules.
 
 # Files
+ 
 
 # Not a target:
 ../grade.o:
@@ -9218,6 +9339,7 @@ List.hpp:
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 main_student.o: main_student.cc
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -9261,17 +9383,20 @@ main.cc:
 # strcache performance: lookups = 31 / hit rate = 45%
 # hash-table stats:
 # Load=17/8192=0%, Rehash=0, Collisions=1/31=3%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter12 ==
+ 
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -9343,14 +9468,15 @@ LC_NAME = en_US.UTF-8
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
+ 
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -9370,7 +9496,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -9388,7 +9514,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -9400,6 +9526,7 @@ HOME = /home/sharofiddin
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # automatic
+ 
 -*-command-variables-*- := CC=g++ CXX=g++
 # environment
 LOGNAME = sharofiddin
@@ -9428,7 +9555,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -9448,7 +9575,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -9460,7 +9587,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -9514,7 +9641,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=120/1024=12%, Rehash=0, Collisions=17/149=11%
 
@@ -9524,9 +9651,9 @@ VSCODE_PID = 2387
 
 # Directories
 
-# . (device 66306, inode 19662256): 33 files, no impossibilities.
+# . (device 66306, inode 19662256): 20 files, no impossibilities.
 
-# 33 files, no impossibilities in 1 directories.
+# 20 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -9543,13 +9670,13 @@ grade_check.cc:
 
 grade_analysis.o: grade_analysis.cc analysis.h
 #  Implicit rule search has been done.
-#  Last modified 2021-02-19 01:24:33.37857656
+#  File does not exist.
 #  File has been updated.
 #  Successfully updated.
 
 Student_info.o: Student_info.cc ../chapter11/Vec.h Str.h Student_info.h
 #  Implicit rule search has been done.
-#  Last modified 2021-02-19 01:24:32.961553584
+#  File does not exist.
 #  File has been updated.
 #  Successfully updated.
 
@@ -9568,13 +9695,13 @@ all: urls_main analysis main2 main3
 
 urls_main: urls_main.o urls.o Str.o
 #  Implicit rule search has been done.
-#  Last modified 2021-02-19 01:24:31.935497061
+#  File does not exist.
 #  File has been updated.
 #  Successfully updated.
 
 urls_main.o: urls_main.cc urls.h ../chapter11/Vec.h Str.h
 #  Implicit rule search has been done.
-#  Last modified 2021-02-19 01:24:31.186455805
+#  File does not exist.
 #  File has been updated.
 #  Successfully updated.
 
@@ -9587,7 +9714,7 @@ grade_analysis.cc:
 
 main2: main2.o Str.o
 #  Implicit rule search has been done.
-#  Last modified 2021-02-19 01:24:34.360630672
+#  File does not exist.
 #  File has been updated.
 #  Successfully updated.
 
@@ -9601,13 +9728,14 @@ Student_info.cc:
 # Not a target:
 urls_main.cc:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2021-01-20 23:51:57.216670627
 #  File has been updated.
 #  Successfully updated.
 
 main2.o: main2.cc
 #  Implicit rule search has been done.
-#  Last modified 2021-02-19 01:24:34.282626373
+#  File does not exist.
 #  File has been updated.
 #  Successfully updated.
 
@@ -9632,7 +9760,6 @@ test: all
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
- 
 #  Last modified 2021-01-20 23:51:57.216670627
 #  File has been updated.
 #  Successfully updated.
@@ -9640,20 +9767,20 @@ makefile:
 # Not a target:
 Str.h:
 #  Implicit rule search has been done.
-#  Last modified 2021-01-20 23:51:57.216670627
+#  Last modified 2021-03-11 00:38:48.661950822
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 main2.cc:
 #  Implicit rule search has been done.
-#  Last modified 2021-01-20 23:51:57.216670627
+#  Last modified 2021-03-11 00:36:51.369754798
 #  File has been updated.
 #  Successfully updated.
 
 grade.o: grade.cc ../chapter11/Vec.h Str.h Student_info.h ../chapter11/median.h
 #  Implicit rule search has been done.
-#  Last modified 2021-02-19 01:24:32.659536946
+#  File does not exist.
 #  File has been updated.
 #  Successfully updated.
 
@@ -9666,7 +9793,7 @@ clobber:
 
 urls.o: urls.cc urls.h ../chapter11/Vec.h Str.h
 #  Implicit rule search has been done.
-#  Last modified 2021-02-19 01:24:31.479471944
+#  File does not exist.
 #  File has been updated.
 #  Successfully updated.
 
@@ -9680,7 +9807,7 @@ grade.cc:
 # Not a target:
 ../chapter11/Vec.h:
 #  Implicit rule search has been done.
-#  Last modified 2021-02-26 18:56:59.608120286
+#  Last modified 2021-03-13 15:04:48.221162359
 #  File has been updated.
 #  Successfully updated.
 
@@ -9700,13 +9827,13 @@ Student_info.h:
 
 analysis.o: analysis.cc ../chapter11/Vec.h Str.h Student_info.h ../chapter11/median.h
 #  Implicit rule search has been done.
-#  Last modified 2021-02-19 01:24:32.291516673
+#  File does not exist.
 #  File has been updated.
 #  Successfully updated.
 
 analysis: grade.o analysis.o Student_info.o grade_analysis.o grade_check.o Str.o
 #  Implicit rule search has been done.
-#  Last modified 2021-02-19 01:24:33.761597663
+#  File does not exist.
 #  File has been updated.
 #  Successfully updated.
 
@@ -9718,13 +9845,13 @@ analysis: grade.o analysis.o Student_info.o grade_analysis.o grade_check.o Str.o
 
 main3: main3.o grade.o Student_info.o Str.o
 #  Implicit rule search has been done.
-#  Last modified 2021-02-19 01:24:34.93766247
+#  File does not exist.
 #  File has been updated.
 #  Successfully updated.
 
 main3.o: main3.cc grade.h ../chapter11/median.h Student_info.h
 #  Implicit rule search has been done.
-#  Last modified 2021-02-19 01:24:34.823656188
+#  File does not exist.
 #  File has been updated.
 #  Successfully updated.
 
@@ -9744,7 +9871,7 @@ main3.cc:
 
 Str.o: Str.h Str.cc ../chapter11/Vec.h
 #  Implicit rule search has been done.
-#  Last modified 2021-02-19 01:24:31.821490782
+#  File does not exist.
 #  File has been updated.
 #  Successfully updated.
 
@@ -9764,7 +9891,7 @@ urls.h:
 
 grade_check.o: grade_check.cc
 #  Implicit rule search has been done.
-#  Last modified 2021-02-19 01:24:33.665592374
+#  File does not exist.
 #  File has been updated.
 #  Successfully updated.
 
@@ -9783,24 +9910,26 @@ Str.cc:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 42 / storage = 425 B / avg = 10 B
-# current buf: size = 8162 B / used = 425 B / count = 42 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 43 / storage = 437 B / avg = 10 B
+# current buf: size = 8162 B / used = 437 B / count = 43 / avg = 10 B
 
-# strcache performance: lookups = 127 / hit rate = 66%
+# strcache performance: lookups = 114 / hit rate = 62%
 # hash-table stats:
-# Load=42/8192=1%, Rehash=0, Collisions=1/127=1%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Load=43/8192=1%, Rehash=0, Collisions=1/114=1%
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter13 ==
  
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -9873,13 +10002,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -9899,7 +10028,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -9917,10 +10046,11 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
+ 
 GTK_MODULES = gail:atk-bridge
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
@@ -9957,7 +10087,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -9977,7 +10107,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -9989,7 +10119,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -10000,6 +10130,7 @@ MFLAGS = -pqrRw
 BREAKPAD_DUMP_LOCATION = /home/sharofiddin/.config/Code/exthost Crash Reports
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
+ 
 # environment
 LC_PAPER = en_US.UTF-8
 # environment
@@ -10043,7 +10174,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=120/1024=12%, Rehash=0, Collisions=17/149=11%
 
@@ -10053,9 +10184,10 @@ VSCODE_PID = 2387
 
 # Directories
 
-# . (device 66306, inode 19662273): 14 files, no impossibilities.
+# . (device 66306, inode 19662273): 33 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+ 
+# 33 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -10063,9 +10195,20 @@ VSCODE_PID = 2387
 
 # Files
 
+# Not a target:
+13-5.cc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+13-7: 13-7.o grade.o read_hw.o Core.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 Student_info.o: Student_info.cc ../chapter08/median.h Student_info.h Core.h
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2021-03-21 14:02:02.332988501
 #  File has been updated.
 #  Successfully updated.
 
@@ -10076,10 +10219,16 @@ Student_info.o: Student_info.cc ../chapter08/median.h Student_info.h Core.h
 #  File has been updated.
 #  Successfully updated.
 
+exercises: 13-1 13-2 13-3 13-4 13-5 13-6 13-7 13-8
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 Core.o: Core.cc Core.h
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2021-03-21 13:54:02.418145999
 #  File has been updated.
+ 
 #  Successfully updated.
 
 all: main_core main_grad main_orig main_core_ptrs
@@ -10088,6 +10237,17 @@ all: main_core main_grad main_orig main_core_ptrs
 #  File has been updated.
 #  Successfully updated.
 
+# Not a target:
+13-9.cc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+13-7.o: 13-7.cc Core.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 Grad.o: Grad.cc Core.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -10095,27 +10255,48 @@ Grad.o: Grad.cc Core.h
 
 read_hw.o: read_hw.cc ../chapter08/median.h Student_info.h
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2021-03-21 13:54:02.08013566
 #  File has been updated.
 #  Successfully updated.
+
+13-4: 13-4.o grade.o read_hw.o Core.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+13-4.o: 13-4.cc Core.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Student_info.cc:
 #  Implicit rule search has been done.
- 
-#  Last modified 2021-01-20 23:51:57.216670627
+#  Last modified 2021-03-21 13:47:57.439698543
 #  File has been updated.
 #  Successfully updated.
 
+ 
 # Not a target:
 Core.cc:
 #  Implicit rule search has been done.
-#  Last modified 2021-01-20 23:51:57.216670627
+#  Last modified 2021-03-21 12:14:32.265098915
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
+13-7.cc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 Grad.cc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+13-6: 13-6.o grade.o read_hw.o Core.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -10127,11 +10308,22 @@ read_hw.cc:
 #  File has been updated.
 #  Successfully updated.
 
+13-6.o: 13-6.cc Core.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+13-4.cc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 test: all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 34):
+#  recipe to execute (from 'makefile', line 60):
 	./main_core <../data/grades_core
 	./main_grad <../data/grades_grad
 	./main_orig <../data/mixed_grades
@@ -10140,9 +10332,10 @@ test: all
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-01-20 23:51:57.216670627
+#  Last modified 2021-03-21 14:01:59.835634132
 #  File has been updated.
 #  Successfully updated.
+ 
 
 main_orig: main_orig.o grade.o Student_info.o read_hw.o Core.o
 #  Implicit rule search has been done.
@@ -10152,7 +10345,7 @@ main_orig: main_orig.o grade.o Student_info.o read_hw.o Core.o
 
 grade.o: grade.cc ../chapter08/median.h Student_info.h
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2021-03-21 13:54:01.849128596
 #  File has been updated.
 #  Successfully updated.
 
@@ -10166,8 +10359,15 @@ clobber:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 40):
-	rm -f *.o *.exe core main_core main_grad main_orig main_core_ptrs
+#  recipe to execute (from 'makefile', line 66):
+	rm -f *.o *.exe core main_core main_grad main_orig main_core_ptrs \
+		13-1 13-2 13-3 13-4 13-5 13-6 13-7 13-8
+
+# Not a target:
+13-6.cc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 grade.cc:
@@ -10182,6 +10382,12 @@ main_orig.cc:
 #  Last modified 2021-01-20 23:51:57.216670627
 #  File has been updated.
 #  Successfully updated.
+
+ 
+13-1: 13-1.o grade.o read_hw.o Core.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 main_core: main_core.o grade.o read_hw.o Core.o
 #  Implicit rule search has been done.
@@ -10198,9 +10404,14 @@ main_core.o: main_core.cc Core.h ../chapter08/median.h
 # Not a target:
 Student_info.h:
 #  Implicit rule search has been done.
-#  Last modified 2021-01-20 23:51:57.216670627
+#  Last modified 2021-03-21 12:18:27.789723252
 #  File has been updated.
 #  Successfully updated.
+
+13-1.o: 13-1.cc Core.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -10211,16 +10422,43 @@ Student_info.h:
 # Not a target:
 Core.h:
 #  Implicit rule search has been done.
-#  Last modified 2021-01-20 23:51:57.216670627
+#  Last modified 2021-03-21 11:59:35.154442797
 #  File has been updated.
 #  Successfully updated.
+
+13-2: 13-2.o grade.o read_hw.o Core.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+13-2.o: 13-2.cc Core.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 main_core.cc:
 #  Implicit rule search has been done.
 #  Last modified 2021-01-20 23:51:57.216670627
 #  File has been updated.
+ 
 #  Successfully updated.
+
+13-8: 13-8.o grade.o read_hw.o Core.o Student_info.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+13-1.cc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+13-8.o: 13-8.cc Core.h Student_info.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 main_core_ptrs.o: main_core_ptrs.cc Core.h ../chapter08/median.h
 #  Implicit rule search has been done.
@@ -10234,6 +10472,17 @@ main_core_ptrs: main_core_ptrs.o grade.o read_hw.o Core.o
 #  File has been updated.
 #  Successfully updated.
 
+13-3: 13-3.o grade.o read_hw.o Core.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+13-2.cc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 main_grad: main_grad.o grade.o read_hw.o Core.o
 #  Implicit rule search has been done.
 #  File does not exist.
@@ -10246,12 +10495,39 @@ main_grad.o: main_grad.cc Core.h ../chapter08/median.h
 #  File has been updated.
 #  Successfully updated.
 
+13-5: 13-5.o grade.o read_hw.o Core.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+13-3.o: 13-3.cc Core.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+13-8.cc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # Not a target:
 main_core_ptrs.cc:
 #  Implicit rule search has been done.
 #  Last modified 2021-01-20 23:51:57.216670627
 #  File has been updated.
 #  Successfully updated.
+
+ 
+13-5.o: 13-5.cc Core.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+13-9: 13-9.o grade.o read_hw.o Core.o Student_info.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 main_grad.cc:
@@ -10260,32 +10536,46 @@ main_grad.cc:
 #  File has been updated.
 #  Successfully updated.
 
+# Not a target:
+13-3.cc:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+13-9.o: 13-9.cc Core.h Student_info.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=31/1024=3%, Rehash=0, Collisions=0/95=0%
+# Load=59/1024=6%, Rehash=0, Collisions=0/200=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 36 / storage = 388 B / avg = 10 B
-# current buf: size = 8162 B / used = 388 B / count = 36 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 68 / storage = 634 B / avg = 9 B
+# current buf: size = 8162 B / used = 634 B / count = 68 / avg = 9 B
 
-# strcache performance: lookups = 102 / hit rate = 64%
+# strcache performance: lookups = 225 / hit rate = 69%
 # hash-table stats:
-# Load=36/8192=0%, Rehash=0, Collisions=1/102=1%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Load=68/8192=1%, Rehash=0, Collisions=1/225=0%
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter14 ==
  
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -10350,6 +10640,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
+ 
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
 LC_NAME = en_US.UTF-8
@@ -10358,13 +10649,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -10383,8 +10674,9 @@ LS_COLORS =
 XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+ 
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -10402,13 +10694,14 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
 GTK_MODULES = gail:atk-bridge
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+ 
 # environment
 HOME = /home/sharofiddin
 # environment
@@ -10442,10 +10735,11 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
+ 
 USER = sharofiddin
 # environment
 LC_MONETARY = en_US.UTF-8
@@ -10462,7 +10756,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -10474,7 +10768,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -10485,6 +10779,7 @@ MFLAGS = -pqrRw
 BREAKPAD_DUMP_LOCATION = /home/sharofiddin/.config/Code/exthost Crash Reports
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
+ 
 # environment
 LC_PAPER = en_US.UTF-8
 # environment
@@ -10513,6 +10808,7 @@ GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 CLUTTER_DEFAULT_FPS = 15
 # default
 SUFFIXES := 
+ 
 # environment
 LIBGL_ALWAYS_SOFTWARE = 1
 # default
@@ -10528,8 +10824,9 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
+ 
 # Load=120/1024=12%, Rehash=0, Collisions=17/149=11%
 
 # Pattern-specific Variable Values
@@ -10549,6 +10846,7 @@ VSCODE_PID = 2387
 # Files
 
 Student_info.o: Student_info.cc Core.h Student_info.h
+ 
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
@@ -10561,7 +10859,6 @@ Vec.h:
 #  File has been updated.
 #  Successfully updated.
 
- 
 Core.o: Core.cc Core.h
 #  Implicit rule search has been done.
 #  File does not exist.
@@ -10589,6 +10886,7 @@ urls_main.o: urls_main.cc urls.h Vec.h Str.h
 read_hw.o: read_hw.cc
 #  Implicit rule search has been done.
 #  File does not exist.
+ 
 #  File has been updated.
 #  Successfully updated.
 
@@ -10615,6 +10913,7 @@ std_main3: std_main3.o Student_info.o Core.o grade.o read_hw.o
 # Not a target:
 urls_main.cc:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2021-01-20 23:51:57.217670633
 #  File has been updated.
 #  Successfully updated.
@@ -10647,6 +10946,7 @@ test: all
 	./std_main1 <../data/mixed_grades
 	./std_main2 <../data/mixed_grades
 	./std_main3 <../data/mixed_grades
+ 
 	./urls_main <../data/urls.htm
 
 # Not a target:
@@ -10680,6 +10980,7 @@ urls.o: urls.cc urls.h Vec.h Str.h
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
+ 
 #  Successfully updated.
 
 # Not a target:
@@ -10708,6 +11009,7 @@ urls.cc:
 #  Implicit rule search has been done.
 #  Last modified 2021-01-20 23:51:57.217670633
 #  File has been updated.
+ 
 #  Successfully updated.
 
 # Not a target:
@@ -10741,6 +11043,7 @@ std_main1.o: std_main1.cc Student_info.h Handle.h
 #  File does not exist.
 #  File has been updated.
 #  Successfully updated.
+ 
 
 Vec_clone.o: Vec_clone.cc Vec.h
 #  Implicit rule search has been done.
@@ -10822,18 +11125,20 @@ std_main2.cc:
 # strcache performance: lookups = 119 / hit rate = 62%
 # hash-table stats:
 # Load=45/8192=1%, Rehash=0, Collisions=1/119=1%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter15 ==
  
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -10906,13 +11211,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -10932,7 +11237,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -10950,7 +11255,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -10990,7 +11295,7 @@ CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -11010,7 +11315,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -11022,7 +11327,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -11076,7 +11381,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=120/1024=12%, Rehash=0, Collisions=17/149=11%
 
@@ -11105,6 +11410,7 @@ main1.o: main1.cc Pic.h
 # Not a target:
 Pic.cc:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2021-01-20 23:51:57.217670633
 #  File has been updated.
 #  Successfully updated.
@@ -11118,7 +11424,6 @@ all: main1 main2
 # Not a target:
 main1.cc:
 #  Implicit rule search has been done.
- 
 #  Last modified 2021-01-20 23:51:57.217670633
 #  File has been updated.
 #  Successfully updated.
@@ -11203,18 +11508,20 @@ main1: main1.o Pic.o
 # strcache performance: lookups = 44 / hit rate = 54%
 # hash-table stats:
 # Load=20/8192=0%, Rehash=0, Collisions=1/44=2%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
 === chapter16 ==
  
 # GNU Make 4.2.1
+ 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
@@ -11285,13 +11592,13 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -11311,7 +11618,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -11329,7 +11636,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -11365,12 +11672,11 @@ MAKE = $(MAKE_COMMAND)
 # environment
 SHLVL = 1
 # command line
- 
 CC = g++
 # environment
 MAKEOVERRIDES = ${-*-command-variables-*-}
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -11390,7 +11696,7 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # environment
 OLDPWD = /home/sharofiddin/practice/c++/practice/accelerated
 # default
@@ -11402,7 +11708,7 @@ LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrRw -- $(MAKEOVERRIDES)
 # environment
@@ -11456,7 +11762,7 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=119/1024=12%, Rehash=0, Collisions=17/153=11%
 
@@ -11616,6 +11922,7 @@ histo.o: histo.cc Pic.h Core.h median.h
 #  File does not exist.
 #  File has been updated.
 #  Successfully updated.
+ 
 
 # Not a target:
 histo.cc:
@@ -11655,7 +11962,6 @@ Pic.o: Pic.cc Pic.h
 # Load=23/1024=2%, Rehash=0, Collisions=2/62=3%
 # VPATH Search Paths
 
- 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
@@ -11666,8 +11972,11 @@ Pic.o: Pic.cc Pic.h
 # strcache performance: lookups = 69 / hit rate = 57%
 # hash-table stats:
 # Load=29/8192=0%, Rehash=0, Collisions=4/69=6%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
+ 
+make: [makefile:15: all] Error 1 (ignored)
+ 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -11675,10 +11984,11 @@ Pic.o: Pic.cc Pic.h
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Mar  4 07:06:43 2021
+# Make data base, printed on Sun Mar 21 14:02:25 2021
 
 # Variables
 
+ 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
@@ -11706,6 +12016,7 @@ XAUTHORITY = /home/sharofiddin/.Xauthority
 # environment
 GDMSESSION = cinnamon2d
 # default
+ 
 MAKE_VERSION := 4.2.1
 # makefile
 CURDIR := /home/sharofiddin/practice/c++/practice/accelerated
@@ -11726,6 +12037,7 @@ MAKEFILE_LIST :=  makefile
 # automatic
 @F = $(notdir $@)
 # environment
+ 
 GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # 'override' directive
 GNUMAKEFLAGS := 
@@ -11746,13 +12058,14 @@ XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/sharofiddin/.local/bin:/home/sharofiddin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sharofiddin/.dotnet/tools:/home/sharofiddin/.dotnet/tools
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
+ 
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1524,unix/tufpc:/tmp/.ICE-unix/1524
+SESSION_MANAGER = local/tufpc:@/tmp/.ICE-unix/1446,unix/tufpc:/tmp/.ICE-unix/1446
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -11772,7 +12085,7 @@ XDG_SESSION_DESKTOP = cinnamon2d
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2387
+GIO_LAUNCHED_DESKTOP_FILE_PID = 5124
 # environment
 MUFFIN_NO_SHADOWS = 1
 # automatic
@@ -11787,10 +12100,11 @@ PWD = /home/sharofiddin/practice/c++/practice/accelerated
 QT_QPA_PLATFORMTHEME = qt5ct
 # default
 .LOADED := 
+ 
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1600
+SSH_AGENT_PID = 1516
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -11815,6 +12129,7 @@ SUBS = chapter00 chapter01 chapter02 chapter03 chapter04 chapter05 chapter05/5-1
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
 GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+ 
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
@@ -11830,7 +12145,7 @@ SHLVL = 1
 # makefile (from 'makefile', line 3)
 CC = g++
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-87f38b98-545d-42bc-ac2d-235f8da48497.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-d871e331-cf56-4992-b72a-fb68a00e387d.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -11850,17 +12165,18 @@ LC_TELEPHONE = en_US.UTF-8
 # default
 MAKE_COMMAND := make
 # environment
-VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/622cb03f7e070a9670c94bae1a45d78d7181fbd4
+VSCODE_NODE_CACHED_DATA_DIR = /home/sharofiddin/.config/Code/CachedData/2b9aebd5354a3629c3aba0a5f5df49f43d6689f8
 # default
 .VARIABLES := 
 # automatic
 *F = $(notdir $*)
+ 
 # environment
 LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.53.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-c7a9d15d-1.54.3-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -11873,6 +12189,7 @@ BREAKPAD_DUMP_LOCATION = /home/sharofiddin/.config/Code/exthost Crash Reports
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 LC_PAPER = en_US.UTF-8
+ 
 # environment
 CINNAMON_VERSION = 4.8.6
 # environment
@@ -11897,6 +12214,7 @@ GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 ^F = $(notdir $^)
 # environment
 CLUTTER_DEFAULT_FPS = 15
+ 
 # default
 SUFFIXES := 
 # environment
@@ -11914,12 +12232,13 @@ CLUTTER_PAINT = disable-culling
 # environment
 LANG = en_US.UTF-8
 # environment
-VSCODE_PID = 2387
+VSCODE_PID = 5124
 # variable set hash-table stats:
 # Load=118/1024=12%, Rehash=0, Collisions=15/152=10%
 
 # Pattern-specific Variable Values
 
+ 
 # No pattern-specific variable values.
 
 # Directories
@@ -11945,6 +12264,7 @@ all:
 # @ := all
 # automatic
 # % := 
+ 
 # automatic
 # * := 
 # automatic
@@ -11962,7 +12282,6 @@ all:
 #  recipe to execute (from 'makefile', line 15):
 	-for c in $(SUBS); do echo "=== $$c =="; (cd $$c; $(MAKE) "CXX=$(CXX)" "CC=$(CC)") done
 
- 
 # Not a target:
 .SUFFIXES:
 #  Implicit rule search has not been done.
@@ -11971,6 +12290,7 @@ all:
 
 test:
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 18):
@@ -11989,6 +12309,7 @@ clobber:
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 21):
 	-for c in $(SUBS); do echo "=== $$c =="; (cd $$c; $(MAKE) "CXX=$(CXX)" "CC=$(CC)" clobber);done
+ 
 
 # Not a target:
 .DEFAULT:
@@ -12010,8 +12331,6 @@ clobber:
 # strcache performance: lookups = 40 / hit rate = 22%
 # hash-table stats:
 # Load=31/8192=0%, Rehash=0, Collisions=1/40=2%
-# Finished Make data base on Thu Mar  4 07:06:43 2021
+# Finished Make data base on Sun Mar 21 14:02:25 2021
 
- 
-make: [makefile:15: all] Error 1 (ignored)
  

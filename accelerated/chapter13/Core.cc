@@ -8,7 +8,6 @@ using std::min;
 
 #include "Core.h"
 #include "grade.h"
-#include <map>
 using std::istream;
 using std::string;
 using std::vector;

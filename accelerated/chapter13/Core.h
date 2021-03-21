@@ -24,6 +24,7 @@ public:
 	virtual double grade() const;
 	virtual bool valid() const; //13-3-5
 	virtual ~Core() { }
+	virtual Core* clone() const { return new Core(*this); }
 
 protected:
 	// accessible to derived classes
@@ -31,7 +32,6 @@ protected:
 	double midterm, final;
 	std::vector<double> homework;
 	std::string n;
-	virtual Core* clone() const { return new Core(*this); }
 private:
 	friend class Student_info;
 };

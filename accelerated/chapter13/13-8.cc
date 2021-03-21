@@ -43,7 +43,6 @@ int main()
 
 	// alphabetize the student records
 	sort(students.begin(), students.end(), Student_info::compare);
-
 	// write the names and grades
 #ifdef _MSC_VER
 	for (std::vector<Student_info>::size_type i = 0;

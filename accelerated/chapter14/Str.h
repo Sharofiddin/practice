@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include <iostream>
+#include <cstring>
 #include "Ptr.h"
 #include "Vec.h"
 

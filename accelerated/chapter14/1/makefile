@@ -1,12 +1,9 @@
 CXX	=	g++
 CXX = g++
 CC = g++
-CXXFLAGS =  -Wall -I. -I../
+CXXFLAGS =  -Wall -I. -I../ -I../../chapter08
 
-Core.o:
-	$(CXX) $(CXXFLAGS) -c ../Core.cc ../Core.h -o Core.o
-
-14-1: Core.o
+14-1: ../Student_info.o ../Core.o ../grade.o  ../read_hw.o 
 
 clobber: 
 	rm -rf *.o 14-1

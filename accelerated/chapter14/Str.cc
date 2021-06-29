@@ -72,3 +72,12 @@ istream& getline(istream&is, Str& s)
         return is;
 }
 
+Str Str::substr(size_type pos,  size_type count) const
+{
+    size_type st_size = size();
+    if(pos >= st_size )
+        throw std::domain_error("out of the range");
+    if((pos + count) > st_size)
+        count = st_size - pos;
+    return Str(data->begin() +pos, data->begin()+pos+count);
+}

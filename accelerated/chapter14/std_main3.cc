@@ -6,8 +6,11 @@
 #include <iostream>
 #include <stdexcept>
 #include <vector>
-
+#ifdef RFCOUNT
+#include "6/Ptr_c.h"
+#else
 #include "Ptr.h"
+#endif
 #include "Student_info.h"
 
 using std::cin;
@@ -32,6 +35,9 @@ bool compare_Core_handles(const Ptr<Core>& lhs, const Ptr<Core>& rhs) {
 }
 int main()
 {
+	#ifdef RFCOUNT
+		std::cout << "Running with RFCOUNT (14-6 ex)\n";
+	#endif
 	vector< Ptr<Core> > students;       // changed type
 	Ptr<Core> record;                   // changed type
 	char ch;

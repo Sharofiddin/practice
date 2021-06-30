@@ -1,6 +1,6 @@
 CXX = g++
 CC = g++
-CXXFLAGS = -I. -I../chapter08
+override CXXFLAGS += -I. -I../chapter08
 
 all:		std_main1 std_main2 std_main3 urls_main
 
@@ -14,7 +14,9 @@ std_main2.o:	std_main2.cc Student_info.h Ref_handle.h
 
 std_main3:	std_main3.o Student_info.o Core.o grade.o read_hw.o
 
-std_main3.o:	std_main3.cc Student_info.h Ptr.h
+std_main3_rc:	Student_info.o Core.o grade.o read_hw.o
+
+std_main3.o:	std_main3.cc Student_info.h Ptr.h 6/Ptr_c.h
 
 Core.o:	Core.cc Core.h
 
@@ -42,3 +44,6 @@ test:		all
 
 clobber:
 	rm -f *.o *.exe core std_main1 std_main2 std_main3 urls_main
+#for test 14-6 run : 
+#make CXXFLAGS=-DRFCOUNT std_main3 
+#from terminal

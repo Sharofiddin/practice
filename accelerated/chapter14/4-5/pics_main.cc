@@ -3,6 +3,7 @@
 #include <iterator>
 #include "Str.h"
 #include "Vec.h"
+#include <string>
 
 #include "pics.h"
 

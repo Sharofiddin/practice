@@ -42,6 +42,8 @@ public:
 		std::copy(i, j, std::back_inserter(*data));
 	}
 
+	Str substr(size_type start, size_type count) const;
+
 	// call `make_unique' as necessary
 	char& operator[](size_type i) {
 		data.make_unique();

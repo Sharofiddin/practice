@@ -96,24 +96,25 @@ void Frame_Pic::display(ostream& os, ht_sz row, bool do_pad) const
 			pad(os, 0, width());
 
 	} else {
+		
 		if (row == 0 || row == height() - 1) {
 
-			// top or bottom row
-			os << string(width(), '*');
+			// top or bottom row (15-2)
+			os << "*"<< string(width() - 2, '#') << "*";
 
 		} else if (row == 1 || row == height() - 2) {
 
 			// second from top or bottom row
-			os << "*";
+			os << "$";
 			pad(os, 1, width() - 1);
-			os << "*";
+			os << "$";
 
 		} else {
 
 			// interior row
-			os << "* ";
+			os << "$ ";
 			p->display(os, row - 2, true);
-			os << " *";
+			os << " $";
 
 		}
 	}

@@ -2,7 +2,7 @@ CXX = g++
 CC = g++
 CXXFLAGS = -I. -I../chapter14
 
-all:		main1 main2
+all:		main1 main2 15-1
 
 Pic.o:		Pic.cc Pic.h
 
@@ -14,10 +14,14 @@ main1.o:	main1.cc Pic.h
 
 main1:		main1.o Pic.o
 
+15-1.o:	15-1.cc Pic.h
+
+15-1:	15-1.o Pic.o 
 
 test:		all
 	./main1
 	./main2
+	./15-1
 
 clobber:
-	rm -f *.o *.exe core main1 main2
+	rm -f *.o *.exe core main1 main2 15-1
